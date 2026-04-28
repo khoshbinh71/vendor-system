@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -8,914 +7,204 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --gold:#f59e0b;--gold-light:#fde68a;--gold-dark:#d97706;
-  --bg:#f8fafc;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;
-  --gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;
-  --gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;
-  --gray-800:#1f2937;--gray-900:#111827;
-  --green:#10b981;--red:#ef4444;--blue:#3b82f6;--orange:#f97316;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.05);
-  --shadow:0 4px 6px rgba(0,0,0,.07);
-  --shadow-lg:0 10px 25px rgba(0,0,0,.1);
-  --radius:12px;--radius-sm:8px;--radius-lg:16px;
-}
+:root{--gold:#f59e0b;--gold-light:#fde68a;--gold-dark:#d97706;--bg:#f8fafc;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--gray-900:#111827;--green:#10b981;--red:#ef4444;--blue:#3b82f6;--orange:#f97316;--shadow-sm:0 1px 2px rgba(0,0,0,.05);--shadow:0 4px 6px rgba(0,0,0,.07);--shadow-lg:0 10px 25px rgba(0,0,0,.1);--radius:12px;--radius-sm:8px;--radius-lg:16px}
 body{font-family:'Vazirmatn',Tahoma,sans-serif;background:var(--bg);color:var(--gray-800);min-height:100vh}
 button{font-family:'Vazirmatn',Tahoma,sans-serif;cursor:pointer}
 input,select,textarea{font-family:'Vazirmatn',Tahoma,sans-serif}
-
-/* LOGIN */
 #loginPage{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#1e3a5f 0%,#0f2027 100%)}
 .login-box{background:white;border-radius:20px;padding:40px;width:90%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .login-logo{text-align:center;margin-bottom:30px}
-.login-logo h1{font-size:20px;color:var(–gray-800);font-weight:800;margin-top:12px}
-.login-logo p{font-size:13px;color:var(–gray-500);margin-top:4px}
-.login-icon{width:64px;height:64px;background:linear-gradient(135deg,var(–gold),var(–gold-dark));border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto}
+.login-logo h1{font-size:20px;color:var(--gray-800);font-weight:800;margin-top:12px}
+.login-logo p{font-size:13px;color:var(--gray-500);margin-top:4px}
+.login-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto}
 .form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:13px;font-weight:600;color:var(–gray-700);margin-bottom:6px}
-.form-group input,.form-group select{width:100%;padding:12px 14px;border:1.5px solid var(–gray-200);border-radius:var(–radius-sm);font-size:14px;outline:none;transition:.2s}
-.form-group input:focus,.form-group select:focus{border-color:var(–gold);box-shadow:0 0 0 3px rgba(245,158,11,.1)}
-.login-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(–gold),var(–gold-dark));color:white;border:none;border-radius:var(–radius-sm);font-size:15px;font-weight:700;margin-top:8px;transition:.2s}
-.login-btn:hover{opacity:.9;transform:translateY(-1px)}
-.login-error{background:#fee2e2;color:#dc2626;padding:10px 14px;border-radius:var(–radius-sm);font-size:13px;margin-top:12px;display:none}
-.login-footer{text-align:center;font-size:11px;color:var(–gray-400);margin-top:20px}
-
-/* MAIN APP */
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--gray-700);margin-bottom:6px}
+.form-group input,.form-group select{width:100%;padding:12px 14px;border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);font-size:14px;outline:none;transition:.2s}
+.form-group input:focus,.form-group select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,158,11,.1)}
+.login-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:white;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:700;margin-top:8px}
+.login-error{background:#fee2e2;color:#dc2626;padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;margin-top:12px;display:none}
+.login-footer{text-align:center;font-size:11px;color:var(--gray-400);margin-top:20px}
 #app{display:none}
-.header{background:white;border-bottom:2px solid var(–gold);padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:var(–shadow)}
+.header{background:white;border-bottom:2px solid var(--gold);padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
 .header-title{display:flex;align-items:center;gap:12px}
-.header-title .icon{width:40px;height:40px;background:linear-gradient(135deg,var(–gold),var(–gold-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
-.header-title h1{font-size:15px;font-weight:800;color:var(–gray-800)}
-.header-title p{font-size:11px;color:var(–gray-500)}
+.header-title .icon{width:40px;height:40px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.header-title h1{font-size:15px;font-weight:800;color:var(--gray-800)}
+.header-title p{font-size:11px;color:var(--gray-500)}
 .header-user{display:flex;align-items:center;gap:10px}
-.user-badge{background:var(–gray-100);border-radius:20px;padding:6px 12px;font-size:12px;color:var(–gray-600);font-weight:600}
-.admin-badge{background:linear-gradient(135deg,var(–gold),var(–gold-dark));color:white}
-.logout-btn{background:none;border:1.5px solid var(–gray-200);border-radius:8px;padding:6px 12px;font-size:12px;color:var(–gray-600)}
-
-/* STATS */
-.stats-bar{display:flex;gap:12px;padding:16px 24px;background:white;border-bottom:1px solid var(–gray-100);overflow-x:auto}
-.stat-card{flex:1;min-width:140px;background:var(–gray-50);border-radius:var(–radius);padding:14px 16px;border:1.5px solid var(–gray-100)}
-.stat-card.gold{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(–gold-light)}
-.stat-num{font-size:24px;font-weight:800;color:var(–gray-800)}
-.stat-card.gold .stat-num{color:var(–gold-dark)}
-.stat-label{font-size:11px;color:var(–gray-500);margin-top:2px}
+.user-badge{background:var(--gray-100);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--gray-600);font-weight:600}
+.admin-badge{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:white}
+.logout-btn{background:none;border:1.5px solid var(--gray-200);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--gray-600)}
+.stats-bar{display:flex;gap:12px;padding:16px 24px;background:white;border-bottom:1px solid var(--gray-100);overflow-x:auto}
+.stat-card{flex:1;min-width:140px;background:var(--gray-50);border-radius:var(--radius);padding:14px 16px;border:1.5px solid var(--gray-100)}
+.stat-card.gold{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:var(--gold-light)}
+.stat-num{font-size:24px;font-weight:800;color:var(--gray-800)}
+.stat-card.gold .stat-num{color:var(--gold-dark)}
+.stat-label{font-size:11px;color:var(--gray-500);margin-top:2px}
 .stat-card.red{background:#fef2f2;border-color:#fecaca}
-.stat-card.red .stat-num{color:var(–red)}
+.stat-card.red .stat-num{color:var(--red)}
 .stat-card.green{background:#f0fdf4;border-color:#bbf7d0}
-.stat-card.green .stat-num{color:var(–green)}
-
-/* TABS */
-.tabs{display:flex;gap:4px;padding:12px 24px;background:white;border-bottom:1px solid var(–gray-100);overflow-x:auto}
-.tab-btn{padding:8px 16px;border-radius:var(–radius-sm);border:none;font-size:13px;font-weight:600;background:none;color:var(–gray-500);white-space:nowrap;transition:.2s}
-.tab-btn.active{background:var(–gold);color:white}
-.tab-btn:hover:not(.active){background:var(–gray-100);color:var(–gray-700)}
-
-/* CONTENT */
+.stat-card.green .stat-num{color:var(--green)}
+.tabs{display:flex;gap:4px;padding:12px 24px;background:white;border-bottom:1px solid var(--gray-100);overflow-x:auto}
+.tab-btn{padding:8px 16px;border-radius:var(--radius-sm);border:none;font-size:13px;font-weight:600;background:none;color:var(--gray-500);white-space:nowrap;transition:.2s}
+.tab-btn.active{background:var(--gold);color:white}
 .content{padding:20px 24px;max-width:1400px;margin:0 auto}
-
-/* FILTERS */
 .filters{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
-.search-input{flex:2;min-width:200px;padding:10px 14px;border:1.5px solid var(–gray-200);border-radius:var(–radius-sm);font-size:13px;outline:none}
-.search-input:focus{border-color:var(–gold)}
-.filter-select{flex:1;min-width:140px;padding:10px 14px;border:1.5px solid var(–gray-200);border-radius:var(–radius-sm);font-size:13px;outline:none;background:white}
-.filter-select:focus{border-color:var(–gold)}
-.blacklist-toggle{padding:10px 16px;border-radius:var(–radius-sm);border:1.5px solid var(–gray-200);font-size:13px;font-weight:600;background:white;color:var(–gray-600);transition:.2s}
-.blacklist-toggle.active{background:#fee2e2;border-color:#fca5a5;color:var(–red)}
-.add-btn{padding:10px 16px;background:var(–gold);color:white;border:none;border-radius:var(–radius-sm);font-size:13px;font-weight:700}
-
-/* TABLE */
-.result-count{font-size:12px;color:var(–gray-500);margin-bottom:10px}
-.table-wrap{overflow-x:auto;border-radius:var(–radius);border:1.5px solid var(–gray-100)}
+.search-input{flex:2;min-width:200px;padding:10px 14px;border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px;outline:none}
+.search-input:focus{border-color:var(--gold)}
+.filter-select{flex:1;min-width:140px;padding:10px 14px;border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px;outline:none;background:white}
+.blacklist-toggle{padding:10px 16px;border-radius:var(--radius-sm);border:1.5px solid var(--gray-200);font-size:13px;font-weight:600;background:white;color:var(--gray-600)}
+.blacklist-toggle.active{background:#fee2e2;border-color:#fca5a5;color:var(--red)}
+.add-btn{padding:10px 16px;background:var(--gold);color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:700}
+.result-count{font-size:12px;color:var(--gray-500);margin-bottom:10px}
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1.5px solid var(--gray-100)}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{background:var(–gray-50);padding:10px 12px;text-align:right;color:var(–gray-600);font-weight:700;border-bottom:1.5px solid var(–gray-100);white-space:nowrap}
-td{padding:10px 12px;border-bottom:1px solid var(–gray-50);vertical-align:middle}
-tr:hover td{background:var(–gray-50);cursor:pointer}
+th{background:var(--gray-50);padding:10px 12px;text-align:right;color:var(--gray-600);font-weight:700;border-bottom:1.5px solid var(--gray-100);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--gray-50);vertical-align:middle}
+tr:hover td{background:var(--gray-50);cursor:pointer}
 tr.blacklisted td{background:#fef2f2}
-tr.blacklisted:hover td{background:#fee2e2}
-.company-name{font-weight:700;color:var(–blue)}
-tr.blacklisted .company-name{color:var(–red)}
+.company-name{font-weight:700;color:var(--blue)}
+tr.blacklisted .company-name{color:var(--red)}
 .score-badge{display:inline-block;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:700}
 .score-badge.high{background:#d1fae5;color:#065f46}
 .score-badge.mid{background:#fef3c7;color:#92400e}
 .score-badge.low{background:#fee2e2;color:#991b1b}
-.bl-badge{background:#fee2e2;color:var(–red);border:1px solid #fca5a5;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700}
-.delay-ok{color:var(–green);font-weight:600}
-.delay-warn{color:var(–orange);font-weight:600}
-.delay-bad{color:var(–red);font-weight:600}
-.stars{color:var(–gold);font-size:12px}
-
-/* PAGINATION */
+.bl-badge{background:#fee2e2;color:var(--red);border:1px solid #fca5a5;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700}
+.delay-ok{color:var(--green);font-weight:600}
+.delay-warn{color:var(--orange);font-weight:600}
+.delay-bad{color:var(--red);font-weight:600}
+.stars{color:var(--gold);font-size:12px}
 .pagination{display:flex;gap:6px;margin-top:16px;justify-content:center;flex-wrap:wrap}
-.page-btn{padding:7px 12px;border-radius:var(–radius-sm);border:1.5px solid var(–gray-200);background:white;font-size:13px;font-weight:600;color:var(–gray-600);transition:.2s}
-.page-btn.active{background:var(–gold);border-color:var(–gold);color:white}
+.page-btn{padding:7px 12px;border-radius:var(--radius-sm);border:1.5px solid var(--gray-200);background:white;font-size:13px;font-weight:600;color:var(--gray-600)}
+.page-btn.active{background:var(--gold);border-color:var(--gold);color:white}
 .page-btn:disabled{opacity:.4;cursor:not-allowed}
-
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
-.modal-box{background:white;border-radius:var(–radius-lg);width:100%;max-width:560px;max-height:90vh;overflow-y:auto;box-shadow:var(–shadow-lg)}
-.modal-header{padding:20px 24px;border-bottom:1px solid var(–gray-100);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white}
-.modal-header h2{font-size:16px;font-weight:800;color:var(–gray-800)}
-.modal-close{background:none;border:none;font-size:20px;color:var(–gray-400);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.modal-close:hover{background:var(–gray-100)}
+.modal-box{background:white;border-radius:var(--radius-lg);width:100%;max-width:560px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg)}
+.modal-header{padding:20px 24px;border-bottom:1px solid var(--gray-100);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white}
+.modal-header h2{font-size:16px;font-weight:800;color:var(--gray-800)}
+.modal-close{background:none;border:none;font-size:20px;color:var(--gray-400);width:32px;height:32px;border-radius:50%}
 .modal-body{padding:20px 24px}
-.detail-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(–gray-100)}
-.detail-row:last-child{border-bottom:none}
-.detail-label{font-size:13px;color:var(–gray-500)}
-.detail-value{font-size:13px;font-weight:600;color:var(–gray-800)}
-.section-title{font-size:13px;font-weight:700;color:var(–gray-700);margin:16px 0 10px;padding-bottom:6px;border-bottom:2px solid var(–gold)}
-.eval-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
-.eval-item label{font-size:11px;color:var(–gray-500);font-weight:600;display:block;margin-bottom:4px}
+.detail-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--gray-100)}
+.detail-label{font-size:13px;color:var(--gray-500)}
+.detail-value{font-size:13px;font-weight:600;color:var(--gray-800)}
+.section-title{font-size:13px;font-weight:700;color:var(--gray-700);margin:16px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--gold)}
 .eval-chips{display:flex;flex-wrap:wrap;gap:4px}
-.eval-chip{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1.5px solid var(–gray-200);background:white;color:var(–gray-600);transition:.2s}
-.eval-chip.selected{background:var(–gold);border-color:var(–gold);color:white}
-.eval-chip:hover:not(.selected){border-color:var(–gold);color:var(–gold-dark)}
-.total-score-box{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid var(–gold-light);border-radius:var(–radius);padding:16px;text-align:center;margin:16px 0}
-.total-score-num{font-size:36px;font-weight:900;color:var(–gold-dark)}
-.total-score-label{font-size:12px;color:var(–gray-500);margin-top:2px}
-.bl-warning{background:#fee2e2;border:1.5px solid #fca5a5;border-radius:var(–radius-sm);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.bl-warning span{font-size:13px;color:var(–red);font-weight:600}
-.remove-bl-btn{background:white;border:1.5px solid var(–red);color:var(–red);border-radius:var(–radius-sm);padding:6px 12px;font-size:12px;font-weight:700}
-
-/* AI */
-.ai-section{background:var(–gray-50);border-radius:var(–radius);padding:16px;margin-top:16px}
-.ai-section h4{font-size:13px;font-weight:700;color:var(–gray-700);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.ai-result{font-size:13px;color:var(–gray-700);line-height:1.8;white-space:pre-wrap}
-.ai-loading{display:flex;align-items:center;gap:8px;color:var(–gray-500);font-size:13px}
-.spinner{width:16px;height:16px;border:2px solid var(–gray-200);border-top-color:var(–gold);border-radius:50%;animation:spin .7s linear infinite}
+.eval-chip{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1.5px solid var(--gray-200);background:white;color:var(--gray-600)}
+.eval-chip.selected{background:var(--gold);border-color:var(--gold);color:white}
+.total-score-box{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid var(--gold-light);border-radius:var(--radius);padding:16px;text-align:center;margin:16px 0}
+.total-score-num{font-size:36px;font-weight:900;color:var(--gold-dark)}
+.total-score-label{font-size:12px;color:var(--gray-500);margin-top:2px}
+.bl-warning{background:#fee2e2;border:1.5px solid #fca5a5;border-radius:var(--radius-sm);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.bl-warning span{font-size:13px;color:var(--red);font-weight:600}
+.remove-bl-btn{background:white;border:1.5px solid var(--red);color:var(--red);border-radius:var(--radius-sm);padding:6px 12px;font-size:12px;font-weight:700}
+.ai-section{background:var(--gray-50);border-radius:var(--radius);padding:16px;margin-top:16px}
+.ai-result{font-size:13px;color:var(--gray-700);line-height:1.8;white-space:pre-wrap}
+.ai-loading{display:flex;align-items:center;gap:8px;color:var(--gray-500);font-size:13px}
+.spinner{width:16px;height:16px;border:2px solid var(--gray-200);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* HISTORY */
-.history-item{padding:10px 12px;background:var(–gray-50);border-radius:var(–radius-sm);margin-bottom:6px;border-right:3px solid var(–gold)}
-.history-item.reset{border-right-color:var(–red);background:#fef2f2}
-.history-meta{font-size:11px;color:var(–gray-400);margin-top:3px}
-
-/* AI TAB */
-.ai-tab-box{background:white;border-radius:var(–radius-lg);padding:24px;box-shadow:var(–shadow)}
-.ai-tab-box h3{font-size:16px;font-weight:800;color:var(–gray-800);margin-bottom:6px}
-.ai-tab-box p{font-size:13px;color:var(–gray-500);margin-bottom:16px}
+.history-item{padding:10px 12px;background:var(--gray-50);border-radius:var(--radius-sm);margin-bottom:6px;border-right:3px solid var(--gold)}
+.history-item.reset{border-right-color:var(--red);background:#fef2f2}
+.history-meta{font-size:11px;color:var(--gray-400);margin-top:3px}
+.ai-tab-box{background:white;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
+.ai-tab-box h3{font-size:16px;font-weight:800;color:var(--gray-800);margin-bottom:6px}
+.ai-tab-box p{font-size:13px;color:var(--gray-500);margin-bottom:16px}
 .ai-examples{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.ai-example{background:var(–gray-50);border:1.5px solid var(–gray-200);border-radius:20px;padding:6px 14px;font-size:12px;color:var(–gray-600);cursor:pointer;transition:.2s}
-.ai-example:hover{border-color:var(–gold);color:var(–gold-dark);background:#fffbeb}
-.ai-textarea{width:100%;border:1.5px solid var(–gray-200);border-radius:var(–radius-sm);padding:12px;font-size:14px;min-height:80px;outline:none;resize:vertical}
-.ai-textarea:focus{border-color:var(–gold)}
-.ai-send-btn{background:var(–gold);color:white;border:none;border-radius:var(–radius-sm);padding:12px 24px;font-size:14px;font-weight:700;margin-top:10px}
-.ai-response{background:var(–gray-50);border-radius:var(–radius);padding:20px;margin-top:16px;font-size:14px;color:var(–gray-700);line-height:1.9;white-space:pre-wrap;border-right:3px solid var(–gold)}
-
-/* REPORT TAB */
+.ai-example{background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:20px;padding:6px 14px;font-size:12px;color:var(--gray-600);cursor:pointer}
+.ai-textarea{width:100%;border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);padding:12px;font-size:14px;min-height:80px;outline:none;resize:vertical}
+.ai-send-btn{background:var(--gold);color:white;border:none;border-radius:var(--radius-sm);padding:12px 24px;font-size:14px;font-weight:700;margin-top:10px}
+.ai-response{background:var(--gray-50);border-radius:var(--radius);padding:20px;margin-top:16px;font-size:14px;color:var(--gray-700);line-height:1.9;white-space:pre-wrap;border-right:3px solid var(--gold)}
 .report-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-.report-card{background:white;border-radius:var(–radius);padding:20px;box-shadow:var(–shadow);border-top:3px solid var(–gold)}
-.report-card h4{font-size:14px;font-weight:700;color:var(–gray-700);margin-bottom:12px}
-.report-stat{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(–gray-50)}
-.report-stat:last-child{border-bottom:none}
-
-/* DASHBOARD TAB */
+.report-card{background:white;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border-top:3px solid var(--gold)}
+.report-card h4{font-size:14px;font-weight:700;color:var(--gray-700);margin-bottom:12px}
+.report-stat{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--gray-50)}
 .dashboard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.dash-card{background:white;border-radius:var(–radius-lg);padding:20px;box-shadow:var(–shadow)}
-.dash-card h3{font-size:14px;font-weight:800;color:var(–gray-700);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(–gray-100)}
-.top-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(–gray-50)}
-.top-item-name{font-size:13px;font-weight:600;color:var(–gray-700)}
-.top-item-score{font-size:13px;font-weight:800}
-
-/* ADD FORM */
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-full{grid-column:1/-1}
-.save-btn{background:var(–gold);color:white;border:none;border-radius:var(–radius-sm);padding:12px 24px;font-size:14px;font-weight:700;margin-top:8px}
-.cancel-btn{background:white;border:1.5px solid var(–gray-200);border-radius:var(–radius-sm);padding:12px 24px;font-size:14px;font-weight:600;color:var(–gray-600);margin-top:8px;margin-right:8px}
-
-/* COMPARE */
-.compare-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:2px solid var(–gold);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 -4px 20px rgba(0,0,0,.1);z-index:150;display:none}
-.compare-chips{display:flex;gap:8px;flex-wrap:wrap}
-.compare-chip{background:var(–gold-light);border:1.5px solid var(–gold);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;color:var(–gold-dark)}
-.compare-chip button{background:none;border:none;margin-right:4px;cursor:pointer;font-size:14px}
-.compare-btn{background:var(–gold);color:white;border:none;border-radius:var(–radius-sm);padding:10px 20px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+.dash-card{background:white;border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow)}
+.dash-card h3{font-size:14px;font-weight:800;color:var(--gray-700);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--gray-100)}
+.top-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gray-50)}
+.top-item-name{font-size:13px;font-weight:600;color:var(--gray-700)}
+.save-btn{background:var(--gold);color:white;border:none;border-radius:var(--radius-sm);padding:12px 24px;font-size:14px;font-weight:700;margin-top:8px}
+.cancel-btn{background:white;border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);padding:12px 24px;font-size:14px;font-weight:600;color:var(--gray-600);margin-top:8px;margin-right:8px}
+.compare-bar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:2px solid var(--gold);padding:12px 24px;display:none;align-items:center;justify-content:space-between;box-shadow:0 -4px 20px rgba(0,0,0,.1);z-index:150}
+.compare-chip{background:var(--gold-light);border:1.5px solid var(--gold);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--gold-dark)}
+.compare-btn{background:var(--gold);color:white;border:none;border-radius:var(--radius-sm);padding:10px 20px;font-size:13px;font-weight:700}
 .compare-btn:disabled{opacity:.4;cursor:not-allowed}
-.clear-compare{background:none;border:none;color:var(–gray-500);font-size:12px;text-decoration:underline}
 </style>
-
 </head>
 <body>
-
-<!-- LOGIN -->
-
-<div id="loginPage">
-  <div class="login-box">
-    <div class="login-logo">
-      <div class="login-icon">⚙️</div>
-      <h1>سامانه مدیریت تامین‌کنندگان</h1>
-      <p>هلدینگ خلیج فارس</p>
-    </div>
-    <div class="form-group">
-      <label>نام کاربری</label>
-      <input type="text" id="loginUser" placeholder="نام کاربری را وارد کنید">
-    </div>
-    <div class="form-group">
-      <label>رمز عبور</label>
-      <input type="password" id="loginPass" placeholder="رمز عبور را وارد کنید">
-    </div>
-    <div class="form-group" id="loginCatGroup" style="display:none">
-      <label>حوزه تخصصی شما</label>
-      <select id="loginCat">
-        <option value="">انتخاب کنید</option>
-      </select>
-    </div>
-    <div class="form-group" id="loginNameGroup" style="display:none">
-      <label>نام و نام خانوادگی</label>
-      <input type="text" id="loginName" placeholder="مثال: علی محمدی">
-    </div>
-    <div class="form-group" id="loginPersonnelGroup" style="display:none">
-      <label>شماره پرسنلی</label>
-      <input type="text" id="loginPersonnel" placeholder="مثال: 1234">
-    </div>
-    <div id="loginError" class="login-error">نام کاربری یا رمز عبور اشتباه است</div>
-    <button class="login-btn" onclick="doLogin()">ورود به سامانه</button>
-    <div class="login-footer">تمامی حقوق محفوظ است — هلدینگ خلیج فارس ۱۴۰۴</div>
-  </div>
-</div>
-
-<!-- MAIN APP -->
-
+<div id="loginPage"><div class="login-box"></div></div>
 <div id="app">
-  <div class="header">
-    <div class="header-inner">
-      <div class="header-title">
-        <div class="icon">⚙️</div>
-        <div>
-          <h1>سامانه متمرکز مدیریت تامین و منابع</h1>
-          <p>هلدینگ خلیج فارس</p>
-        </div>
-      </div>
-      <div class="header-user">
-        <span class="user-badge" id="userBadge"></span>
-        <button class="logout-btn" onclick="doLogout()">خروج</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="stats-bar" id="statsBar"></div>
-
-  <div class="tabs" id="tabsBar"></div>
-
-  <div class="content" id="mainContent"></div>
+<div class="header"><div class="header-inner">
+<div class="header-title"><div class="icon">⚙️</div><div><h1>سامانه متمرکز مدیریت تامین و منابع</h1><p>هلدینگ خلیج فارس</p></div></div>
+<div class="header-user"><span class="user-badge" id="userBadge"></span><button class="logout-btn" onclick="doLogout()">خروج</button></div>
+</div></div>
+<div class="stats-bar" id="statsBar"></div>
+<div class="tabs" id="tabsBar"></div>
+<div class="content" id="mainContent"></div>
 </div>
-
-<!-- MODAL -->
-
 <div class="modal-overlay" id="modal" style="display:none" onclick="closeModal(event)">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <div class="modal-header">
-      <h2 id="modalTitle">جزئیات تامین‌کننده</h2>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-  </div>
-</div>
-
-<!-- COMPARE BAR -->
-
+<div class="modal-box" onclick="event.stopPropagation()">
+<div class="modal-header"><h2 id="modalTitle"></h2><button class="modal-close" onclick="closeModal()">✕</button></div>
+<div class="modal-body" id="modalBody"></div>
+</div></div>
 <div class="compare-bar" id="compareBar">
-  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    <span style="font-size:13px;font-weight:700;color:var(--gray-700)">مقایسه:</span>
-    <div class="compare-chips" id="compareChips"></div>
-    <button class="clear-compare" onclick="clearCompare()">پاک کردن</button>
-  </div>
-  <button class="compare-btn" id="compareBtn" onclick="doCompare()" disabled>🤖 مقایسه با هوش مصنوعی</button>
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+<span style="font-size:13px;font-weight:700">مقایسه:</span>
+<div class="compare-chips" id="compareChips"></div>
+<button style="background:none;border:none;color:var(--gray-500);font-size:12px;text-decoration:underline" onclick="clearCompare()">پاک کردن</button>
 </div>
-
+<button class="compare-btn" id="compareBtn" onclick="doCompare()" disabled>🤖 مقایسه با هوش مصنوعی</button>
+</div>
 <script>
-const CATEGORIES = ["لوله و اتصالات","فلنج","ولو و شیرآلات","پمپ و کمپرسور","مواد شیمیایی و کاتالیست","قطعات یدکی","ابزار دقیق","برق صنعتی","تجهیزات ایمنی","خدمات مهندسی","ملزومات اداری","تجهیزات سرمایه‌ای"];
-const PROVINCES = ["تهران","اصفهان","خوزستان","فارس","البرز","مازندران","خراسان رضوی","آذربایجان شرقی","گیلان","کرمان","بوشهر","سیستان و بلوچستان"];
-const API_KEY = "aa-fYqbhO2PX44WeC69wOWYsJnylMUKcUkb47ut8Mg2JhPjmUqt";
-const ADMIN_USER = "hoomankhoshbin";
-const ADMIN_PASS = "3304024";
-
-function makeEmps(prefix, names) {
-  return names.map((name, i) => {
-    const code = `${prefix}${String(101+i).padStart(3,"0")}`;
-    return {name, personnel: code, pass: code};
-  });
-}
-
-const PETROCHEMICALS = {
-  // شرکت های تولیدی
-  "پتروشیمی اروند": { employees: makeEmps("AR", ["علی محمدی","حسن رضایی","فاطمه احمدی","محمد کریمی","زهرا موسوی"]) },
-  "پتروشیمی بندر امام": { employees: makeEmps("BI", ["رضا حسینی","مریم صادقی","امیر علوی","سارا قاسمی","جواد نجفی","لیلا رستمی"]) },
-  "پتروشیمی بوعلی سینا": { employees: makeEmps("BS", ["محسن اکبری","نسرین فرهادی","داود منصوری","الهام رحیمی","سیامک جعفری"]) },
-  "پتروشیمی خوزستان": { employees: makeEmps("KZ", ["حمید زارعی","مینا طاهری","رسول غلامی","آزاده ولی‌پور","مجید صالحی","زینب امیری","کاوه مرادی"]) },
-  "پتروشیمی شهید تندگویان": { employees: makeEmps("TN", ["عباس نظری","راحله کاظمی","فرهاد معینی","تهمینه جوادی","سعید یوسفی","مهسا رستگار","ندا حیدری","بهزاد مرادی","شیرین کمالی","وحید صفری"]) },
-  "پتروشیمی کارون": { employees: makeEmps("KR", ["مصطفی ابراهیمی","فریده حسن‌زاده","ناصر قربانی","معصومه رضوی","علیرضا خانی"]) },
-  "پتروشیمی آریا ساسول": { employees: makeEmps("AS", ["کمال شهبازی","فروغ محمودی","حیدر قنبری","سودابه نوری","مهران خسروی","روناک احمدی"]) },
-  "پتروشیمی پارس": { employees: makeEmps("PR", ["شاهین رضایی","منیژه کریمی","یوسف محمدی","آرزو صادقی","نادر حیدری","مژگان علی‌پور"]) },
-  "پتروشیمی نوری": { employees: makeEmps("NR", ["پرویز اسدی","گلناز طالبی","سهراب میرزایی","دلارام وطن‌دوست","امیرحسین رضوی","صبا امینی"]) },
-  "پتروشیمی هنگام فاز ۱": { employees: makeEmps("HF", ["آرش تهرانی","شادی کوهستانی","بهرام سلیمانی","پگاه رنجبر","کیوان فضلی"]) },
-  "پالایش گاز بیدبلند خلیج فارس": { employees: makeEmps("BB", ["حسین علیزاده","زیبا کریمی","رامین صادقی","ترانه موسوی","فریبرز احمدی","لادن رضایی"]) },
-  "پالایش گاز هویزه خلیج فارس": { employees: makeEmps("HV", ["منوچهر حسینی","آناهیتا غلامی","فرزاد مرادی","سیما جعفری","بهنام قاسمی"]) },
-  "پتروشیمی گچساران": { employees: makeEmps("GC", ["صادق محمودی","مهتاب کاظمی","ارسلان رحیمی","شبنم اکبری","مسعود طاهری"]) },
-  "پتروشیمی ارومیه": { employees: makeEmps("UR", ["کورش ابراهیمی","فاطمه زارعی","بابک منصوری","لیلا حیدری","پویا رستمی"]) },
-  "پتروشیمی ایلام": { employees: makeEmps("IL", ["داریوش قربانی","سحر محمدی","نیما کریمی","الناز حسینی","شهرام رضایی","مریم جوادی"]) },
-  "کود شیمیایی اوره لردگان": { employees: makeEmps("LR", ["بهروز اسدی","ویدا مرادی","سجاد علوی","نادیا صادقی","وحید نجفی"]) },
-  "مبین انرژی خلیج فارس": { employees: makeEmps("MB", ["کیارش حسنی","مینا رحیمی","پژمان اکبری","سانا موسوی","مهدی طاهری","فرناز ابراهیمی"]) },
-  "فجر انرژی خلیج فارس": { employees: makeEmps("FJ", ["یاسر محمدی","شیدا رضایی","فرشاد کریمی","نیوشا جعفری","امید صالحی"]) },
-  "پتروشیمی آپادانا خلیج فارس": { employees: makeEmps("AP", ["نصرت حیدری","آسیه مرادی","سامان قاسمی","ریحانه علیزاده","کاملیا نجفی"]) },
-  // طرح های در حال اجرا
-  "پتروشیمی صدف خلیج فارس": { employees: makeEmps("SD", ["محمدرضا صادقی","فرزانه کاظمی","علی‌اکبر رستمی","نگار موسوی","حسنعلی رحیمی"]) },
-  "طرح PP/PDH پالایش گاز بیدبلند": { employees: makeEmps("PD", ["جمشید علوی","ستاره غلامی","مجتبی طاهری","آیدا حسینی","صالح رضایی"]) },
-  "PP/PDH پتروشیمی پارس": { employees: makeEmps("PP", ["غلامرضا محمدی","فریال جعفری","حمزه اسدی","سوسن مرادی","ابراهیم نجفی"]) },
-  "پتروشیمی گلستان": { employees: makeEmps("GL", ["بهمن رضایی","مهرناز حیدری","کاظم اکبری","روشنک صادقی","رحیم موسوی"]) },
-  "پتروشیمی تفتان آریا منطقه آزاد چابهار": { employees: makeEmps("TF", ["سپهر کریمی","فرنوش رحیمی","مظفر علیزاده","تابان جوادی","شهاب طاهری"]) },
-  "پتروشیمی هنگام فاز ۲": { employees: makeEmps("HF2", ["نادعلی محمودی","پریوش اسدی","طهماسب مرادی","شکوفه رستمی","حبیب کاظمی"]) },
-  "پتروشیمی دهدشت": { employees: makeEmps("DH", ["فریدون غلامی","سیمین حسینی","محراب رضایی","هستی جعفری","قادر موسوی"]) },
-  "پتروشیمی ارغوان گستر ایلام": { employees: makeEmps("AG", ["منصور طاهری","شهره کریمی","نادر ابراهیمی","گیسو مرادی","مراد نجفی"]) },
-  "پتروشیمی هرمز خلیج فارس": { employees: makeEmps("HZ", ["ستار رحیمی","نوشین اکبری","قاسم علوی","تینا صادقی","یعقوب قربانی"]) },
-  "پتروشیمی الماس ماهشهر": { employees: makeEmps("AM", ["رحمان محمدی","مهسا رضایی","شکرالله جعفری","باران موسوی","طیب کاظمی"]) },
-  "پتروشیمی ابن سینا اندیمشک": { employees: makeEmps("AB", ["بیژن اسدی","مرجان رستمی","سیروس مرادی","فیروزه نجفی","خداداد حسینی"]) },
-  "صنایع پلیمر گچساران": { employees: makeEmps("PG", ["سرمد غلامی","سپیده کریمی","مرتضی ابراهیمی","شیما رحیمی","کوروش اکبری"]) },
-  "پتروشیمی ممسنی": { employees: makeEmps("MM", ["نوروز جوادی","زهره طاهری","سردار رضایی","نسترن حیدری","تیمور مرادی"]) },
-  "پتروشیمی بروجن": { employees: makeEmps("BJ", ["مراد نجفی","فیروزه کاظمی","شاپور علوی","رومینا رحیمی","بهادر اکبری"]) },
-  "پتروشیمی شیمیایی نگین سنقر": { employees: makeEmps("NS", ["طالب صادقی","سیمرغ موسوی","محراب غلامی","پروانه رستمی","ولی کریمی"]) },
-  "پتروشیمی کازرون": { employees: makeEmps("KZ2", ["مهربان ابراهیمی","ترنم جعفری","فضل‌الله مرادی","نازنین طاهری","کرم حسینی"]) },
-  "پتروشیمی پتروآرمند لردگان": { employees: makeEmps("PL", ["دادخدا رضایی","شبنم نجفی","بهروز کاظمی","ارغوان موسوی","سیف‌الله رحیمی"]) },
-  "پتروشیمی پتروپرک پویا": { employees: makeEmps("PK", ["طاهر علوی","آزیتا صادقی","مظاهر مرادی","رزیتا غلامی","داوود اکبری"]) },
-  // شرکت های خدماتی و سرمایه گذاری
-  "مهندسی نوآوری و ساخت فن آوری های نوین خلیج فارس": { employees: makeEmps("MN", ["ابوالفضل کریمی","پریچهر حیدری","نعمت جوادی","فریبا محمدی","مهرداد نجفی"]) },
-  "انرژی های تجدیدپذیر خلیج فارس": { employees: makeEmps("EN", ["خیرالله رحیمی","ناهید اسدی","غنی مرادی","شراره کاظمی","رزاق موسوی"]) },
-  "پتروسلامت خلیج فارس": { employees: makeEmps("PS", ["بهنام علوی","شیلا رضایی","وفا طاهری","پریماه اکبری","زکریا غلامی"]) },
-  "سرمایه گذاری حامیم صنایع تکمیلی پتروشیمی خلیج فارس": { employees: makeEmps("HA", ["سیدعلی حسینی","محبوبه جعفری","محمود مرادی","روجا رستمی","مسلم نجفی"]) },
-  "پیشران صنعت نفت و گاز خلیج فارس": { employees: makeEmps("PI", ["شمسعلی صادقی","ندا موسوی","پرهام رحیمی","سحرناز اکبری","نذیر طاهری"]) },
-  "صندوق پژوهش و فناوری غیردولتی سرمایه گذاری خطرپذیر شرکتی صنایع پتروشیمی": { employees: makeEmps("SF", ["داریوش کاظمی","فرخنده علوی","سلیم غلامی","آرمیتا مرادی","رضوان رضایی"]) },
-  "فرهنگی ورزشی استقلال ایران": { employees: makeEmps("ES", ["نجم‌الدین جوادی","سمیه طاهری","مبین نجفی","یلدا اسدی","زبیر رستمی"]) },
-  "تامین سرمایه خلیج فارس": { employees: makeEmps("TS", ["شهباز رحیمی","فیروز محمدی","لادن اکبری","رستم صادقی","نادره غلامی"]) },
-  "پارک های پتروشیمی افق خلیج فارس": { employees: makeEmps("PA", ["نورالدین مرادی","سپیده کاظمی","مشتاق حسینی","آنا رضایی","مصطفی طاهری"]) },
-  "پایانه ها و مخازن پتروشیمی": { employees: makeEmps("PM", ["اردشیر جعفری","گلبهار رستمی","نریمان نجفی","فرانک صادقی","کاربد موسوی"]) },
-  "عملیات غیرصنعتی ماهشهر": { employees: makeEmps("MH", ["سالار رحیمی","مهناز علوی","حسام طاهری","شکوه مرادی","احمدعلی کریمی"]) },
-  "گروه سرمایه گذاری و توسعه صنایع تکمیلی پتروشیمی خلیج فارس (پترول)": { employees: makeEmps("PT", ["قدرت‌الله حسینی","نرجس رضایی","ابوذر غلامی","صوفیا نجفی","شعبان اسدی"]) },
-  "مدیریت توسعه صنایع پتروشیمی": { employees: makeEmps("MT", ["رستم موسوی","آرشام صادقی","گلریز طاهری","فخرالدین کریمی","بلال رحیمی"]) },
-  "ان‌پی‌سی اینترنشنال": { employees: makeEmps("NP", ["سیمین‌دخت مرادی","عبدالله اکبری","مریم‌السادات علوی","جلال‌الدین رضایی","هانیه نجفی"]) },
-  "گروه مالی پیشگامان سرمایه خلیج فارس": { employees: makeEmps("GF", ["داریا طاهری","ناصرالدین رستمی","شهلا کاظمی","سپهداد محمدی","پروین صادقی"]) },
-  "عملیات غیرصنعتی پازارگاد": { employees: makeEmps("PZ", ["دریادل حسینی","فریماه جعفری","ملوان رحیمی","بنفشه اکبری","کاوه غلامی"]) },
-  "ره‌آوران فنون پتروشیمی": { employees: makeEmps("RF", ["پلیمر آقایی","زمرد رضایی","سپند موسوی","آوا طاهری","سروش کریمی"]) },
-  "تجارت صنعت خلیج فارس": { employees: makeEmps("TJ", ["احسان مرادی","سارینا رستمی","ماهان علوی","فرشته صادقی","بردیا نجفی"]) },
-  "کارگزاری خلیج فارس (سهامی خاص)": { employees: makeEmps("KG", ["حسن‌علی موسوی","مهتاب رستمی","صمد کریمی","لیندا جعفری","رحمت‌الله رحیمی"]) },
-  "ستاد هلدینگ خلیج فارس": { employees: makeEmps("HQ", ["مدیر تدارکات ارشد","کارشناس ارشد خرید","مسئول قراردادها","رئیس ارزیابی تامین‌کنندگان","کارشناس ارزیابی"]) },
-};
-
-let currentUser = null;
-let compareList = [];
-let currentTab = "list";
-let filterSearch = "", filterCat = "", filterProv = "", sortBy = "total", showBLOnly = false, currentPage = 1;
-const PER_PAGE = 20;
-
-// Build login UI dynamically
-window.addEventListener("DOMContentLoaded", function() {
-  const loginBox = document.querySelector(".login-box");
-  loginBox.innerHTML = `
-    <div class="login-logo">
-      <div class="login-icon">⚙️</div>
-      <h1>سامانه مدیریت تامین و منابع</h1>
-      <p>هلدینگ خلیج فارس</p>
-    </div>
-    <div class="form-group">
-      <label>انتخاب شرکت / پتروشیمی</label>
-      <select id="selCompany" class="filter-select" style="width:100%" onchange="onCompanySelect()">
-        <option value="">-- ابتدا شرکت را انتخاب کنید --</option>
-        <option value="__admin__">👑 مدیریت سیستم (ادمین)</option>
-        ${Object.keys(PETROCHEMICALS).map(c=>`<option value="${c}">${c}</option>`).join("")}
-      </select>
-    </div>
-    <div id="step1Extra" style="display:none"></div>
-    <div id="loginError" class="login-error"></div>
-    <button class="login-btn" onclick="doLogin()">ورود به سامانه</button>
-    <div class="login-footer">تمامی حقوق محفوظ است — هلدینگ خلیج فارس ۱۴۰۴</div>
-  `;
-});
-
-function onCompanySelect() {
-  const val = document.getElementById("selCompany").value;
-  const extra = document.getElementById("step1Extra");
-  if (!val) { extra.style.display="none"; return; }
-  extra.style.display="block";
-  if (val === "__admin__") {
-    extra.innerHTML = `
-      <div class="form-group"><label>نام کاربری</label><input id="adminUser" class="search-input" style="width:100%" placeholder="نام کاربری ادمین"></div>
-      <div class="form-group"><label>رمز عبور</label><input type="password" id="adminPass" class="search-input" style="width:100%" placeholder="رمز عبور"></div>
-    `;
-  } else {
-    const emps = PETROCHEMICALS[val].employees;
-    extra.innerHTML = `
-      <div class="form-group">
-        <label>انتخاب نام کارمند</label>
-        <select id="selEmployee" class="filter-select" style="width:100%">
-          <option value="">-- نام خود را انتخاب کنید --</option>
-          ${emps.map(e=>`<option value="${e.personnel}">${e.name} (${e.personnel})</option>`).join("")}
-        </select>
-      </div>
-      <div class="form-group">
-        <label>رمز عبور</label>
-        <input type="password" id="empPass" class="search-input" style="width:100%" placeholder="شماره پرسنلی = رمز عبور">
-        <div style="font-size:11px;color:var(--gray-400);margin-top:4px">رمز عبور شما برابر شماره پرسنلی‌تان است</div>
-      </div>
-    `;
-  }
-}
-
-function doLogin() {
-  const company = document.getElementById("selCompany").value;
-  const err = document.getElementById("loginError");
-  err.style.display = "none";
-
-  if (!company) { err.textContent="لطفاً شرکت را انتخاب کنید"; err.style.display="block"; return; }
-
-  if (company === "__admin__") {
-    const u = document.getElementById("adminUser")?.value.trim();
-    const p = document.getElementById("adminPass")?.value.trim();
-    if (u===ADMIN_USER && p===ADMIN_PASS) {
-      currentUser = {name:"مدیر سیستم", personnel:"0000", isAdmin:true, company:"ستاد هلدینگ خلیج فارس", category:null};
-      startApp();
-    } else { err.textContent="نام کاربری یا رمز اشتباه است"; err.style.display="block"; }
-    return;
-  }
-
-  const empPersonnel = document.getElementById("selEmployee")?.value;
-  const empPass = document.getElementById("empPass")?.value.trim();
-  if (!empPersonnel) { err.textContent="لطفاً نام کارمند را انتخاب کنید"; err.style.display="block"; return; }
-  if (!empPass) { err.textContent="رمز عبور را وارد کنید"; err.style.display="block"; return; }
-
-  const pc = PETROCHEMICALS[company];
-  const emp = pc.employees.find(e=>e.personnel===empPersonnel);
-  if (!emp || emp.pass !== empPass) { err.textContent="رمز عبور اشتباه است — رمز = شماره پرسنلی"; err.style.display="block"; return; }
-
-  currentUser = {name:emp.name, personnel:emp.personnel, isAdmin:false, company, category:null};
-  startApp();
-}
-
-function doLogout() {
-  currentUser = null;
-  document.getElementById("loginPage").style.display = "flex";
-  document.getElementById("app").style.display = "none";
-}
-
-function startApp() {
-  document.getElementById("loginPage").style.display = "none";
-  document.getElementById("app").style.display = "block";
-  const badge = document.getElementById("userBadge");
-  badge.textContent = currentUser.isAdmin ? "👑 مدیر سیستم" : `${currentUser.name} | ${currentUser.company}`;
-  if (currentUser.isAdmin) badge.classList.add("admin-badge");
-  renderStats();
-  renderTabs();
-  renderTab("list");
-}
-
-// Generate companies
-function generateCompanies() {
-  const stored = localStorage.getItem("customSuppliers");
-  const custom = stored ? JSON.parse(stored) : [];
-  const prefixes = ["صنعت","فن‌آور","پیشرو","توسعه","نوآور","صنایع","مهندسی","تکنو","پارس","ایران","آریا","کاسپین","زاگرس","خلیج","سپهر"];
-  const mids = ["پترو","نفت","گاز","فولاد","آهن","مس","آلومینیوم","شیمی","انرژی","صنعت","تکنیک","ماشین","قطعه","لوله","پمپ"];
-  const suffixes = ["کار","سازان","گستر","آراد","پارس","نو","برتر","کیان","نیک","پور","راد","افزار","تجارت","گروه","سیستم"];
-  const companies = [];
-  const used = new Set();
-  for (let i = 0; i < 1000; i++) {
-    let name;
-    do {
-      const p = prefixes[Math.floor(Math.random()*prefixes.length)];
-      const m = mids[Math.floor(Math.random()*mids.length)];
-      const s = suffixes[Math.floor(Math.random()*suffixes.length)];
-      name = `${p} ${m} ${s}`;
-    } while (used.has(name));
-    used.add(name);
-    const promised = Math.floor(Math.random()*60)+10;
-    const actual = Math.max(promised-5, promised + Math.floor(Math.random()*40)-5);
-    const delay = Math.max(0, actual-promised);
-    const q = +(Math.random()*4+1).toFixed(1);
-    const c = +(Math.random()*4+1).toFixed(1);
-    const pr = +(Math.random()*4+1).toFixed(1);
-    const f = +(Math.random()*4+1).toFixed(1);
-    const ds = delay===0?5:delay<=7?4:delay<=15?3:delay<=30?2:1;
-    const total = +((q+c+pr+f+ds)/5).toFixed(2);
-    companies.push({
-      id:`IR-${String(1000+i).padStart(4,"0")}`,name,
-      category:CATEGORIES[Math.floor(Math.random()*CATEGORIES.length)],
-      province:PROVINCES[Math.floor(Math.random()*PROVINCES.length)],
-      phone:`021-${Math.floor(10000000+Math.random()*89999999)}`,
-      promisedDays:promised,actualDays:actual,delay,
-      quality:q,communication:c,pricing:pr,followup:f,delayScore:ds,total,
-      projects:Math.floor(Math.random()*30)+1,isCustom:false
-    });
-  }
-  return [...companies,...custom];
-}
-
-const ALL = generateCompanies();
-
-function getRatings(id) {
-  const s = localStorage.getItem("ratings_"+id);
-  return s ? JSON.parse(s) : {};
-}
-function saveRatings(id, r) {
-  localStorage.setItem("ratings_"+id, JSON.stringify(r));
-}
-function getHistory(id) {
-  const s = localStorage.getItem("history_"+id);
-  return s ? JSON.parse(s) : [];
-}
-function addHistory(id, entry) {
-  let h = getHistory(id);
-  h.unshift(entry);
-  if (h.length > 100) h = h.slice(0,100);
-  localStorage.setItem("history_"+id, JSON.stringify(h));
-}
-
-function getEffectiveSupplier(s) {
-  const r = getRatings(s.id);
-  const quality = r.quality !== undefined ? r.quality : s.quality;
-  const communication = r.communication !== undefined ? r.communication : s.communication;
-  const pricing = r.pricing !== undefined ? r.pricing : s.pricing;
-  const followup = r.followup !== undefined ? r.followup : s.followup;
-  const delayScore = r.delayScore !== undefined ? r.delayScore : s.delayScore;
-  const total = +((quality+communication+pricing+followup+delayScore)/5).toFixed(2);
-  return {...s,quality,communication,pricing,followup,delayScore,total,ratings:r};
-}
-
-function getFiltered() {
-  let list = ALL.map(getEffectiveSupplier);
-  if (!currentUser.isAdmin && filterCat) list = list.filter(s => s.category === filterCat);
-  if (filterSearch) list = list.filter(s => s.name.includes(filterSearch)||s.id.includes(filterSearch));
-  if (filterCat && currentUser.isAdmin) list = list.filter(s => s.category === filterCat);
-  if (filterProv) list = list.filter(s => s.province === filterProv);
-  if (showBLOnly) list = list.filter(s => s.total < 2.5);
-  list.sort((a,b) => sortBy==="delay" ? a.delay-b.delay : b[sortBy]-a[sortBy]);
-  return list;
-}
-
-function renderStats() {
-  const list = ALL.map(getEffectiveSupplier);
-  const scope = currentUser.isAdmin ? list : list.filter(s => s.category === currentUser.category);
-  const avg = (scope.reduce((s,c)=>s+c.total,0)/scope.length).toFixed(1);
-  const top = scope.filter(s=>s.total>=4).length;
-  const bl = scope.filter(s=>s.total<2.5).length;
-  document.getElementById("statsBar").innerHTML = `
-    <div class="stat-card gold"><div class="stat-num">${scope.length.toLocaleString("fa")}</div><div class="stat-label">کل تامین‌کنندگان</div></div>
-    <div class="stat-card"><div class="stat-num">${avg}</div><div class="stat-label">میانگین امتیاز</div></div>
-    <div class="stat-card green"><div class="stat-num">${top.toLocaleString("fa")}</div><div class="stat-label">تامین‌کننده برتر (۴+)</div></div>
-    <div class="stat-card red"><div class="stat-num">${bl.toLocaleString("fa")}</div><div class="stat-label">لیست سیاه</div></div>
-    ${currentUser.isAdmin?'<div class="stat-card gold"><div class="stat-num">۵۵.۱</div><div class="stat-label">ارزش کل تامین (همت)</div></div>':''}
-  `;
-}
-
-function renderTabs() {
-  const tabs = [["list","📋 تامین‌کنندگان"],["ai","🤖 مشاور هوش مصنوعی"],["report","📊 گزارش دسته‌بندی"]];
-  if (currentUser.isAdmin) tabs.push(["dashboard","📈 داشبورد مدیریتی"]);
-  document.getElementById("tabsBar").innerHTML = tabs.map(([id,label])=>
-    `<button class="tab-btn${currentTab===id?" active":""}" onclick="renderTab('${id}')">${label}</button>`
-  ).join("");
-}
-
-function renderTab(tab) {
-  currentTab = tab;
-  renderTabs();
-  const c = document.getElementById("mainContent");
-  if (tab==="list") renderList(c);
-  else if (tab==="ai") renderAI(c);
-  else if (tab==="report") renderReport(c);
-  else if (tab==="dashboard") renderDashboard(c);
-}
-
-function star(v){const f=Math.floor(v);return'<span class="stars">'+"★".repeat(f)+"☆".repeat(5-f)+'</span>'}
-function scoreBadge(v){const cl=v>=4?"high":v>=3?"mid":"low";return`<span class="score-badge ${cl}">${v}</span>`}
-function delayCell(d){if(d===0)return'<span class="delay-ok">به‌موقع ✓</span>';if(d<=7)return`<span class="delay-warn">${d} روز</span>`;return`<span class="delay-bad">${d} روز</span>`}
-
-function renderList(c) {
-  const filtered = getFiltered();
-  const total = filtered.length;
-  const pages = Math.ceil(total/PER_PAGE);
-  currentPage = Math.min(currentPage, pages||1);
-  const page = filtered.slice((currentPage-1)*PER_PAGE, currentPage*PER_PAGE);
-
-  const canEditCat = currentUser.isAdmin ? "" : `value="${filterCat}" disabled`;
-  c.innerHTML = `
-    <div class="filters">
-      <input class="search-input" placeholder="🔍 جستجو نام یا کد شرکت..." value="${filterSearch}" oninput="filterSearch=this.value;currentPage=1;renderTab('list')">
-      <select class="filter-select" onchange="filterCat=this.value;currentPage=1;renderTab('list')" ${!currentUser.isAdmin?"disabled":""}>
-        <option value="">همه دسته‌ها</option>
-        ${CATEGORIES.map(cat=>`<option value="${cat}"${filterCat===cat?" selected":""}>${cat}</option>`).join("")}
-      </select>
-      <select class="filter-select" onchange="filterProv=this.value;currentPage=1;renderTab('list')">
-        <option value="">همه استان‌ها</option>
-        ${PROVINCES.map(p=>`<option value="${p}"${filterProv===p?" selected":""}>${p}</option>`).join("")}
-      </select>
-      <select class="filter-select" onchange="sortBy=this.value;renderTab('list')">
-        <option value="total"${sortBy==="total"?" selected":""}>مرتب: امتیاز کل</option>
-        <option value="quality"${sortBy==="quality"?" selected":""}>مرتب: کیفیت</option>
-        <option value="communication"${sortBy==="communication"?" selected":""}>مرتب: ارتباط</option>
-        <option value="delay"${sortBy==="delay"?" selected":""}>مرتب: کمترین تاخیر</option>
-      </select>
-      <button class="blacklist-toggle${showBLOnly?" active":""}" onclick="showBLOnly=!showBLOnly;currentPage=1;renderTab('list')">🚫 فقط لیست سیاه</button>
-      <button class="add-btn" onclick="showAddForm()">+ افزودن تامین‌کننده</button>
-      <button class="add-btn" style="background:var(--gray-600)" onclick="exportCSV()">📥 خروجی CSV</button>
-    </div>
-    <div class="result-count">${total.toLocaleString("fa")} شرکت یافت شد — صفحه ${currentPage.toLocaleString("fa")} از ${pages.toLocaleString("fa")}</div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>#</th><th>کد</th><th>نام شرکت</th><th>دسته‌بندی</th><th>استان</th>
-          <th>کیفیت</th><th>ارتباط</th><th>تاخیر</th><th>امتیاز کل</th><th>مقایسه</th>
-        </tr></thead>
-        <tbody>
-          ${page.map((s,i)=>`
-            <tr class="${s.total<2.5?"blacklisted":""}" onclick="openDetail('${s.id}')">
-              <td>${((currentPage-1)*PER_PAGE+i+1).toLocaleString("fa")}</td>
-              <td style="font-size:11px;color:var(--gray-400)">${s.id}</td>
-              <td><div class="company-name">${s.name}</div>${s.total<2.5?'<div class="bl-badge">🚫 لیست سیاه</div>':""}</td>
-              <td>${s.category}</td><td>${s.province}</td>
-              <td>${star(s.quality)}</td>
-              <td>${star(s.communication)}</td>
-              <td>${delayCell(s.delay)}</td>
-              <td>${scoreBadge(s.total)}</td>
-              <td><input type="checkbox" onclick="event.stopPropagation();toggleCompare('${s.id}','${s.name}')" ${compareList.find(x=>x.id===s.id)?"checked":""}></td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
-    </div>
-    <div class="pagination">
-      <button class="page-btn" ${currentPage===1?"disabled":""} onclick="currentPage--;renderTab('list')">قبلی</button>
-      ${Array.from({length:Math.min(5,pages)},(_,i)=>{const pg=Math.max(1,currentPage-2)+i;return pg>pages?"":
-        `<button class="page-btn${pg===currentPage?" active":""}" onclick="currentPage=${pg};renderTab('list')">${pg.toLocaleString("fa")}</button>`}).join("")}
-      <button class="page-btn" ${currentPage>=pages?"disabled":""} onclick="currentPage++;renderTab('list')">بعدی</button>
-    </div>
-  `;
-}
-
-function toggleCompare(id,name){
-  const idx = compareList.findIndex(x=>x.id===id);
-  if(idx>=0) compareList.splice(idx,1);
-  else if(compareList.length<3) compareList.push({id,name});
-  updateCompareBar();
-  renderTab("list");
-}
-function updateCompareBar(){
-  const bar = document.getElementById("compareBar");
-  bar.style.display = compareList.length>0?"flex":"none";
-  document.getElementById("compareChips").innerHTML = compareList.map(x=>
-    `<div class="compare-chip"><button onclick="compareList=compareList.filter(c=>c.id!=='${x.id}');updateCompareBar();renderTab('list')">✕</button>${x.name}</div>`
-  ).join("");
-  document.getElementById("compareBtn").disabled = compareList.length<2;
-}
-function clearCompare(){compareList=[];updateCompareBar();renderTab("list")}
-async function doCompare(){
-  const suppliers = compareList.map(x=>getEffectiveSupplier(ALL.find(s=>s.id===x.id)));
-  const data = suppliers.map(s=>`${s.name}|کیفیت:${s.quality}|ارتباط:${s.communication}|قیمت:${s.pricing}|پیگیری:${s.followup}|تحویل:${s.delayScore}|کل:${s.total}|تاخیر:${s.delay}روز`).join("\n");
-  showModal("مقایسه هوشمند تامین‌کنندگان",`<div class="ai-loading"><div class="spinner"></div> در حال تحلیل مقایسه‌ای...</div>`);
-  const res = await callAI(`مقایسه تفصیلی این تامین‌کنندگان را به فارسی ارائه بده و بهترین را با دلیل معرفی کن:\n${data}`);
-  document.getElementById("modalBody").innerHTML = `<div class="ai-response">${res}</div>`;
-}
-
-const EVAL_CRITERIA = [
-  {key:"delivery",label:"تحویل",opts:[{l:"به‌موقع",v:5},{l:"۱-۷ روز تاخیر",v:4},{l:"۸-۳۰ روز تاخیر",v:3},{l:"بیش از ۳۰ روز",v:1}],scoreKey:"delayScore"},
-  {key:"quality",label:"کیفیت",opts:[{l:"عالی",v:5},{l:"خوب",v:4},{l:"متوسط",v:3},{l:"ضعیف",v:1}],scoreKey:"quality"},
-  {key:"communication",label:"ارتباط",opts:[{l:"خیلی سریع",v:5},{l:"سریع",v:4},{l:"کند",v:2},{l:"بدون پاسخ",v:1}],scoreKey:"communication"},
-  {key:"pricing",label:"قیمت",opts:[{l:"خیلی مناسب",v:5},{l:"مناسب",v:4},{l:"گران",v:2},{l:"خیلی گران",v:1}],scoreKey:"pricing"},
-  {key:"aftersales",label:"پس از فروش",opts:[{l:"عالی",v:5},{l:"خوب",v:4},{l:"ضعیف",v:2},{l:"ندارد",v:1}],scoreKey:"followup"},
-];
-
-function openDetail(id){
-  const s = getEffectiveSupplier(ALL.find(x=>x.id===id));
-  renderDetail(s);
-}
-function renderDetail(s){
-  const isBL = s.total < 2.5;
-  const r = s.ratings||{};
-  const history = getHistory(s.id);
-
-  let evalHtml = EVAL_CRITERIA.map(cr=>`
-    <div style="margin-bottom:12px">
-      <div style="font-size:12px;font-weight:700;color:var(--gray-600);margin-bottom:6px">${cr.label}</div>
-      <div class="eval-chips">
-        ${cr.opts.map(opt=>`
-          <button class="eval-chip${r[cr.key]===opt.v?" selected":""}" 
-            onclick="setRating('${s.id}','${cr.key}',${opt.v},'${cr.scoreKey}','${s.name}')">
-            ${opt.l}
-          </button>
-        `).join("")}
-      </div>
-    </div>
-  `).join("");
-
-  let histHtml = history.length===0?'<div style="font-size:12px;color:var(--gray-400);text-align:center;padding:12px">هنوز ارزیابی ثبت نشده</div>':
-    history.slice(0,20).map(h=>`
-      <div class="history-item${h.type==="reset"?" reset":""}">
-        <div style="font-size:12px;font-weight:600;color:var(--gray-700)">${h.text}</div>
-        <div class="history-meta">${h.user} (${h.personnel}) | ${h.company||""} — ${h.date}</div>
-      </div>
-    `).join("");
-
-  const body = `
-    ${isBL?`<div class="bl-warning"><span>🚫 این تامین‌کننده در لیست سیاه قرار دارد</span><button class="remove-bl-btn" onclick="removeFromBL('${s.id}')">حذف از لیست سیاه</button></div>`:""}
-    <div class="detail-row"><span class="detail-label">کد</span><span class="detail-value">${s.id}</span></div>
-    <div class="detail-row"><span class="detail-label">دسته‌بندی</span><span class="detail-value">${s.category}</span></div>
-    <div class="detail-row"><span class="detail-label">استان</span><span class="detail-value">${s.province}</span></div>
-    <div class="detail-row"><span class="detail-label">تعداد پروژه</span><span class="detail-value">${s.projects} پروژه</span></div>
-    <div class="detail-row"><span class="detail-label">تلفن</span><span class="detail-value">${s.phone}</span></div>
-    <div class="detail-row"><span class="detail-label">تاخیر تحویل</span><span class="detail-value">${delayCell(s.delay)}</span></div>
-    
-    <div class="total-score-box">
-      <div class="total-score-num">${s.total}</div>
-      <div class="total-score-label">امتیاز کل از ۵</div>
-    </div>
-
-    <div class="section-title">ارزیابی تفصیلی</div>
-    ${evalHtml}
-
-    <div class="section-title">تحلیل هوش مصنوعی</div>
-    <div class="ai-section" id="aiDetailSection_${s.id}">
-      <div class="ai-loading"><div class="spinner"></div> در حال تحلیل...</div>
-    </div>
-
-    <div class="section-title">تاریخچه ارزیابی (${history.length} رکورد)</div>
-    <div style="max-height:200px;overflow-y:auto">${histHtml}</div>
-  `;
-
-  showModal(s.name, body);
-  fetchDetailAI(s);
-}
-
-async function fetchDetailAI(s){
-  const el = document.getElementById(`aiDetailSection_${s.id}`);
-  if(!el) return;
-  const text = await callAI(`تحلیل دقیق این تامین‌کننده را به فارسی بده. نقاط قوت و ضعف را با اعداد دقیق ذکر کن و توصیه نهایی بده:\nنام:${s.name}\nدسته:${s.category}\nکیفیت:${s.quality}/5\nارتباط:${s.communication}/5\nقیمت:${s.pricing}/5\nپیگیری:${s.followup}/5\nتحویل:${s.delayScore}/5\nتاخیر:${s.delay}روز\nپروژه‌ها:${s.projects}\nامتیاز کل:${s.total}/5`);
-  if(el) el.innerHTML = `<div class="ai-result">${text}</div>`;
-}
-
-function setRating(id, criterion, value, scoreKey, name){
-  const r = getRatings(id);
-  r[criterion] = value;
-  r[scoreKey] = value;
-  saveRatings(id, r);
-  const s = getEffectiveSupplier(ALL.find(x=>x.id===id));
-  addHistory(id,{
-    text:`${criterion} → ${value}/5`,
-    user:currentUser.name, personnel:currentUser.personnel,
-    company:currentUser.company,
-    date:new Date().toLocaleString("fa-IR"), type:"rating"
-  });
-  renderStats();
-  renderDetail(s);
-}
-
-function removeFromBL(id){
-  if(!confirm("آیا مطمئن هستید؟ تمام امتیازهای این تامین‌کننده پاک خواهد شد.")) return;
-  localStorage.removeItem("ratings_"+id);
-  addHistory(id,{text:"حذف از لیست سیاه — امتیازها ریست شد",user:currentUser.name,personnel:currentUser.personnel,date:new Date().toLocaleString("fa-IR"),type:"reset"});
-  renderStats();
-  closeModal();
-  renderTab("list");
-}
-
-function showAddForm(){
-  const body = `
-    <div class="form-grid">
-      <div class="form-group form-full"><label>نام شرکت</label><input id="af_name" class="search-input" style="width:100%"></div>
-      <div class="form-group"><label>دسته‌بندی</label><select id="af_cat" class="filter-select" style="width:100%">
-        ${CATEGORIES.map(c=>`<option>${c}</option>`).join("")}
-      </select></div>
-      <div class="form-group"><label>استان</label><select id="af_prov" class="filter-select" style="width:100%">
-        ${PROVINCES.map(p=>`<option>${p}</option>`).join("")}
-      </select></div>
-      <div class="form-group"><label>تلفن</label><input id="af_phone" class="search-input" style="width:100%" placeholder="021-..."></div>
-      <div class="form-group"><label>ایمیل</label><input id="af_email" class="search-input" style="width:100%" placeholder="info@..."></div>
-      <div class="form-group form-full"><label>آدرس</label><input id="af_addr" class="search-input" style="width:100%"></div>
-    </div>
-    <div style="margin-top:8px">
-      <button class="cancel-btn" onclick="closeModal()">انصراف</button>
-      <button class="save-btn" onclick="saveNewSupplier()">ذخیره تامین‌کننده</button>
-    </div>
-  `;
-  showModal("افزودن تامین‌کننده جدید", body);
-}
-
-function saveNewSupplier(){
-  const name = document.getElementById("af_name").value.trim();
-  if(!name){alert("نام شرکت الزامی است");return;}
-  const stored = localStorage.getItem("customSuppliers");
-  const list = stored ? JSON.parse(stored) : [];
-  const id = `IR-C${String(Date.now()).slice(-6)}`;
-  list.push({
-    id, name,
-    category:document.getElementById("af_cat").value,
-    province:document.getElementById("af_prov").value,
-    phone:document.getElementById("af_phone").value,
-    email:document.getElementById("af_email").value,
-    address:document.getElementById("af_addr").value,
-    quality:3,communication:3,pricing:3,followup:3,delayScore:3,total:3,
-    projects:0,delay:0,promisedDays:0,actualDays:0,isCustom:true
-  });
-  localStorage.setItem("customSuppliers",JSON.stringify(list));
-  closeModal();
-  alert(`تامین‌کننده "${name}" با کد ${id} ثبت شد`);
-  location.reload();
-}
-
-function exportCSV(){
-  const filtered = getFiltered();
-  const rows = [["کد","نام شرکت","دسته‌بندی","استان","کیفیت","ارتباط","قیمت","پیگیری","تحویل","امتیاز کل","وضعیت"]];
-  filtered.forEach(s=>{
-    rows.push([s.id,s.name,s.category,s.province,s.quality,s.communication,s.pricing,s.followup,s.delayScore,s.total,s.total<2.5?"لیست سیاه":"فعال"]);
-  });
-  const csv = "\uFEFF"+rows.map(r=>r.map(v=>`"${v}"`).join(",")).join("\n");
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
-  a.download = `suppliers-${new Date().toISOString().slice(0,10)}.csv`;
-  a.click();
-}
-
-async function callAI(prompt){
-  try{
-    const res = await fetch("https://api.avalai.ir/v1/chat/completions",{
-      method:"POST",
-      headers:{"Content-Type":"application/json","Authorization":"Bearer "+API_KEY},
-      body:JSON.stringify({model:"gpt-4o-mini",max_tokens:1000,messages:[{role:"user",content:prompt}]})
-    });
-    const data = await res.json();
-    return data.choices?.[0]?.message?.content || "پاسخی دریافت نشد.";
-  } catch(e){return "خطا در اتصال به هوش مصنوعی.";}
-}
-
-function renderAI(c){
-  const examples = ["۱۰ شرکت برتر در حوزه ولو و شیرآلات","شرکت‌های تهرانی با کمترین تاخیر","مقایسه کیفیت تامین‌کنندگان مواد شیمیایی","کدام شرکت‌ها در لیست سیاه هستند؟","بهترین تامین‌کننده فلنج کدام است؟"];
-  c.innerHTML = `
-    <div class="ai-tab-box">
-      <h3>🤖 مشاور هوشمند تامین‌کنندگان</h3>
-      <p>هر سوالی درباره تامین‌کنندگان بپرسید — با استفاده از داده‌های واقعی سامانه پاسخ می‌دهم.</p>
-      <div class="ai-examples">
-        ${examples.map(e=>`<button class="ai-example" onclick="document.getElementById('aiInput').value='${e}'">${e}</button>`).join("")}
-      </div>
-      <textarea id="aiInput" class="ai-textarea" placeholder="سوال یا درخواست خود را بنویسید..."></textarea>
-
-```
-  <br><button class="ai-send-btn" onclick="sendAIQuery()">ارسال ➤</button>
-  <div id="aiOutput" style="display:none" class="ai-response"></div>
-</div>
-```
-
-`;
-}
-
-async function sendAIQuery(){
-const q = document.getElementById(“aiInput”).value.trim();
-if(!q) return;
-const out = document.getElementById(“aiOutput”);
-out.style.display=“block”;
-out.innerHTML=’<div class="ai-loading"><div class="spinner"></div> در حال پردازش…</div>’;
-
-const top100 = ALL.map(getEffectiveSupplier).sort((a,b)=>b.total-a.total).slice(0,100)
-.map(s=>`${s.name}(${s.id})|${s.category}|${s.province}|کل:${s.total}|کیفیت:${s.quality}|ارتباط:${s.communication}|قیمت:${s.pricing}|تاخیر:${s.delay}روز|پروژه:${s.projects}`).join(”\n”);
-
-const bl = ALL.map(getEffectiveSupplier).filter(s=>s.total<2.5).map(s=>s.name).join(”، “);
-
-const res = await callAI(`تو مشاور تخصصی سامانه مدیریت تامین‌کنندگان هلدینگ خلیج فارس هستی.\n۱۰۰ تامین‌کننده برتر:\n${top100}\nلیست سیاه:${bl}\nسوال:${q}\nپاسخ دقیق و حرفه‌ای به فارسی بده.`);
-out.innerHTML = res;
-}
-
-function renderReport(c){
-const list = ALL.map(getEffectiveSupplier);
-c.innerHTML = `<div class="report-grid">${CATEGORIES.map(cat=>{ const items = list.filter(s=>s.category===cat); const avg = items.length?(items.reduce((s,x)=>s+x.total,0)/items.length).toFixed(1):"—"; const best = items.sort((a,b)=>b.total-a.total)[0]; const bl = items.filter(s=>s.total<2.5).length; return `<div class="report-card">
-<h4>${cat}</h4>
-<div class="report-stat"><span style="font-size:12px;color:var(--gray-500)">تعداد</span><span style="font-weight:700">${items.length}</span></div>
-<div class="report-stat"><span style="font-size:12px;color:var(--gray-500)">میانگین امتیاز</span><span style="font-weight:700;color:var(--gold-dark)">${avg}</span></div>
-<div class="report-stat"><span style="font-size:12px;color:var(--gray-500)">لیست سیاه</span><span style="font-weight:700;color:var(--red)">${bl}</span></div>
-<div class="report-stat"><span style="font-size:12px;color:var(--gray-500)">برترین</span><span style="font-weight:700;color:var(--green);font-size:12px">${best?.name||”—”}</span></div>
-</div>`; }).join("")}</div>`;
-}
-
-function renderDashboard(c){
-const list = ALL.map(getEffectiveSupplier);
-const top10 = list.sort((a,b)=>b.total-a.total).slice(0,10);
-const worst10 = list.sort((a,b)=>a.total-b.total).slice(0,10);
-c.innerHTML = ` <div class="dashboard-grid"> <div class="dash-card"> <h3>🏆 ۱۰ تامین‌کننده برتر</h3> ${top10.map((s,i)=>`<div class="top-item">
-<div><span style="color:var(--gold-dark);font-weight:800;margin-left:6px">${i+1}.</span><span class="top-item-name">${s.name}</span><br><span style="font-size:11px;color:var(--gray-400)">${s.category}</span></div>
-<span class="top-item-score" style="color:var(--green)">${s.total}</span>
-</div>`).join("")} </div> <div class="dash-card"> <h3>⚠️ نیاز به بررسی</h3> ${worst10.map((s,i)=>`<div class="top-item">
-<div><span style="color:var(--red);font-weight:800;margin-left:6px">${i+1}.</span><span class="top-item-name">${s.name}</span><br><span style="font-size:11px;color:var(--gray-400)">${s.category}</span></div>
-<span class="top-item-score" style="color:var(--red)">${s.total}</span>
-</div>`).join("")} </div> <div class="dash-card"> <h3>📊 میانگین امتیاز به تفکیک دسته</h3> ${CATEGORIES.map(cat=>{ const items = list.filter(s=>s.category===cat); const avg = items.length?(items.reduce((s,x)=>s+x.total,0)/items.length).toFixed(1):0; const w = Math.min(100,avg/5*100); return `<div style="margin-bottom:10px">
-<div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px">
-<span>${cat}</span><span style="font-weight:700">${avg}</span>
-</div>
-<div style="background:var(--gray-100);border-radius:4px;height:6px">
-<div style="background:var(--gold);width:${w}%;height:100%;border-radius:4px"></div>
-</div>
-</div>`; }).join("")} </div> </div> `;
-}
-
-function showModal(title, body){
-document.getElementById(“modalTitle”).textContent = title;
-document.getElementById(“modalBody”).innerHTML = body;
-document.getElementById(“modal”).style.display = “flex”;
-}
-function closeModal(e){
-if(!e || e.target.id===“modal”) document.getElementById(“modal”).style.display = “none”;
-}
+const CATEGORIES=["لوله و اتصالات","فلنج","ولو و شیرآلات","پمپ و کمپرسور","مواد شیمیایی و کاتالیست","قطعات یدکی","ابزار دقیق","برق صنعتی","تجهیزات ایمنی","خدمات مهندسی","ملزومات اداری","تجهیزات سرمایه‌ای"];
+const PROVINCES=["تهران","اصفهان","خوزستان","فارس","البرز","مازندران","خراسان رضوی","آذربایجان شرقی","گیلان","کرمان","بوشهر","سیستان و بلوچستان"];
+const API_KEY="aa-fYqbhO2PX44WeC69wOWYsJnylMUKcUkb47ut8Mg2JhPjmUqt";
+const ADMIN_USER="hoomankhoshbin";
+const ADMIN_PASS="3304024";
+function makeEmps(p,n){return n.map((name,i)=>{const c=`${p}${String(101+i).padStart(3,"0")}`;return{name,personnel:c,pass:c};})}
+const PETROCHEMICALS={"پتروشیمی اروند":{employees:makeEmps("AR",["علی محمدی","حسن رضایی","فاطمه احمدی","محمد کریمی","زهرا موسوی"])},"پتروشیمی بندر امام":{employees:makeEmps("BI",["رضا حسینی","مریم صادقی","امیر علوی","سارا قاسمی","جواد نجفی","لیلا رستمی"])},"پتروشیمی بوعلی سینا":{employees:makeEmps("BS",["محسن اکبری","نسرین فرهادی","داود منصوری","الهام رحیمی","سیامک جعفری"])},"پتروشیمی خوزستان":{employees:makeEmps("KZ",["حمید زارعی","مینا طاهری","رسول غلامی","آزاده ولی‌پور","مجید صالحی","زینب امیری","کاوه مرادی"])},"پتروشیمی شهید تندگویان":{employees:makeEmps("TN",["عباس نظری","راحله کاظمی","فرهاد معینی","تهمینه جوادی","سعید یوسفی","مهسا رستگار","ندا حیدری","بهزاد مرادی","شیرین کمالی","وحید صفری"])},"پتروشیمی کارون":{employees:makeEmps("KR",["مصطفی ابراهیمی","فریده حسن‌زاده","ناصر قربانی","معصومه رضوی","علیرضا خانی"])},"پتروشیمی آریا ساسول":{employees:makeEmps("AS",["کمال شهبازی","فروغ محمودی","حیدر قنبری","سودابه نوری","مهران خسروی","روناک احمدی"])},"پتروشیمی پارس":{employees:makeEmps("PR",["شاهین رضایی","منیژه کریمی","یوسف محمدی","آرزو صادقی","نادر حیدری","مژگان علی‌پور"])},"پتروشیمی نوری":{employees:makeEmps("NR",["پرویز اسدی","گلناز طالبی","سهراب میرزایی","دلارام وطن‌دوست","امیرحسین رضوی","صبا امینی"])},"پتروشیمی هنگام فاز ۱":{employees:makeEmps("HF",["آرش تهرانی","شادی کوهستانی","بهرام سلیمانی","پگاه رنجبر","کیوان فضلی"])},"پالایش گاز بیدبلند خلیج فارس":{employees:makeEmps("BB",["حسین علیزاده","زیبا کریمی","رامین صادقی","ترانه موسوی","فریبرز احمدی","لادن رضایی"])},"پالایش گاز هویزه خلیج فارس":{employees:makeEmps("HV",["منوچهر حسینی","آناهیتا غلامی","فرزاد مرادی","سیما جعفری","بهنام قاسمی"])},"پتروشیمی گچساران":{employees:makeEmps("GC",["صادق محمودی","مهتاب کاظمی","ارسلان رحیمی","شبنم اکبری","مسعود طاهری"])},"پتروشیمی ارومیه":{employees:makeEmps("UR",["کورش ابراهیمی","فاطمه زارعی","بابک منصوری","لیلا حیدری","پویا رستمی"])},"پتروشیمی ایلام":{employees:makeEmps("IL",["داریوش قربانی","سحر محمدی","نیما کریمی","الناز حسینی","شهرام رضایی","مریم جوادی"])},"کود شیمیایی اوره لردگان":{employees:makeEmps("LR",["بهروز اسدی","ویدا مرادی","سجاد علوی","نادیا صادقی","وحید نجفی"])},"مبین انرژی خلیج فارس":{employees:makeEmps("MB",["کیارش حسنی","مینا رحیمی","پژمان اکبری","سانا موسوی","مهدی طاهری","فرناز ابراهیمی"])},"فجر انرژی خلیج فارس":{employees:makeEmps("FJ",["یاسر محمدی","شیدا رضایی","فرشاد کریمی","نیوشا جعفری","امید صالحی"])},"پتروشیمی آپادانا خلیج فارس":{employees:makeEmps("AP",["نصرت حیدری","آسیه مرادی","سامان قاسمی","ریحانه علیزاده","کاملیا نجفی"])},"پتروشیمی صدف خلیج فارس":{employees:makeEmps("SD",["محمدرضا صادقی","فرزانه کاظمی","علی‌اکبر رستمی","نگار موسوی","حسنعلی رحیمی"])},"طرح PP/PDH پالایش گاز بیدبلند":{employees:makeEmps("PD",["جمشید علوی","ستاره غلامی","مجتبی طاهری","آیدا حسینی","صالح رضایی"])},"PP/PDH پتروشیمی پارس":{employees:makeEmps("PP",["غلامرضا محمدی","فریال جعفری","حمزه اسدی","سوسن مرادی","ابراهیم نجفی"])},"پتروشیمی گلستان":{employees:makeEmps("GL",["بهمن رضایی","مهرناز حیدری","کاظم اکبری","روشنک صادقی","رحیم موسوی"])},"پتروشیمی تفتان آریا منطقه آزاد چابهار":{employees:makeEmps("TF",["سپهر کریمی","فرنوش رحیمی","مظفر علیزاده","تابان جوادی","شهاب طاهری"])},"پتروشیمی هنگام فاز ۲":{employees:makeEmps("HF2",["نادعلی محمودی","پریوش اسدی","طهماسب مرادی","شکوفه رستمی","حبیب کاظمی"])},"پتروشیمی دهدشت":{employees:makeEmps("DH",["فریدون غلامی","سیمین حسینی","محراب رضایی","هستی جعفری","قادر موسوی"])},"پتروشیمی ارغوان گستر ایلام":{employees:makeEmps("AG",["منصور طاهری","شهره کریمی","نادر ابراهیمی","گیسو مرادی","مراد نجفی"])},"پتروشیمی هرمز خلیج فارس":{employees:makeEmps("HZ",["ستار رحیمی","نوشین اکبری","قاسم علوی","تینا صادقی","یعقوب قربانی"])},"پتروشیمی الماس ماهشهر":{employees:makeEmps("AM",["رحمان محمدی","مهسا رضایی","شکرالله جعفری","باران موسوی","طیب کاظمی"])},"پتروشیمی ابن سینا اندیمشک":{employees:makeEmps("AB",["بیژن اسدی","مرجان رستمی","سیروس مرادی","فیروزه نجفی","خداداد حسینی"])},"صنایع پلیمر گچساران":{employees:makeEmps("PG",["سرمد غلامی","سپیده کریمی","مرتضی ابراهیمی","شیما رحیمی","کوروش اکبری"])},"پتروشیمی ممسنی":{employees:makeEmps("MM",["نوروز جوادی","زهره طاهری","سردار رضایی","نسترن حیدری","تیمور مرادی"])},"پتروشیمی بروجن":{employees:makeEmps("BJ",["مراد نجفی","فیروزه کاظمی","شاپور علوی","رومینا رحیمی","بهادر اکبری"])},"پتروشیمی شیمیایی نگین سنقر":{employees:makeEmps("NS",["طالب صادقی","سیمرغ موسوی","محراب غلامی","پروانه رستمی","ولی کریمی"])},"پتروشیمی کازرون":{employees:makeEmps("KZ2",["مهربان ابراهیمی","ترنم جعفری","فضل‌الله مرادی","نازنین طاهری","کرم حسینی"])},"پتروشیمی پتروآرمند لردگان":{employees:makeEmps("PL",["دادخدا رضایی","شبنم نجفی","بهروز کاظمی","ارغوان موسوی","سیف‌الله رحیمی"])},"پتروشیمی پتروپرک پویا":{employees:makeEmps("PK",["طاهر علوی","آزیتا صادقی","مظاهر مرادی","رزیتا غلامی","داوود اکبری"])},"مهندسی نوآوری و ساخت فن آوری های نوین خلیج فارس":{employees:makeEmps("MN",["ابوالفضل کریمی","پریچهر حیدری","نعمت جوادی","فریبا محمدی","مهرداد نجفی"])},"انرژی های تجدیدپذیر خلیج فارس":{employees:makeEmps("EN",["خیرالله رحیمی","ناهید اسدی","غنی مرادی","شراره کاظمی","رزاق موسوی"])},"پتروسلامت خلیج فارس":{employees:makeEmps("PS",["بهنام علوی","شیلا رضایی","وفا طاهری","پریماه اکبری","زکریا غلامی"])},"سرمایه گذاری حامیم صنایع تکمیلی پتروشیمی خلیج فارس":{employees:makeEmps("HA",["سیدعلی حسینی","محبوبه جعفری","محمود مرادی","روجا رستمی","مسلم نجفی"])},"پیشران صنعت نفت و گاز خلیج فارس":{employees:makeEmps("PI",["شمسعلی صادقی","ندا موسوی","پرهام رحیمی","سحرناز اکبری","نذیر طاهری"])},"صندوق پژوهش و فناوری غیردولتی صنایع پتروشیمی":{employees:makeEmps("SF",["داریوش کاظمی","فرخنده علوی","سلیم غلامی","آرمیتا مرادی","رضوان رضایی"])},"فرهنگی ورزشی استقلال ایران":{employees:makeEmps("ES",["نجم‌الدین جوادی","سمیه طاهری","مبین نجفی","یلدا اسدی","زبیر رستمی"])},"تامین سرمایه خلیج فارس":{employees:makeEmps("TS",["شهباز رحیمی","فیروز محمدی","لادن اکبری","رستم صادقی","نادره غلامی"])},"پارک های پتروشیمی افق خلیج فارس":{employees:makeEmps("PA",["نورالدین مرادی","سپیده کاظمی","مشتاق حسینی","آنا رضایی","مصطفی طاهری"])},"پایانه ها و مخازن پتروشیمی":{employees:makeEmps("PM",["اردشیر جعفری","گلبهار رستمی","نریمان نجفی","فرانک صادقی","کاربد موسوی"])},"عملیات غیرصنعتی ماهشهر":{employees:makeEmps("MH",["سالار رحیمی","مهناز علوی","حسام طاهری","شکوه مرادی","احمدعلی کریمی"])},"گروه سرمایه گذاری پترول":{employees:makeEmps("PT",["قدرت‌الله حسینی","نرجس رضایی","ابوذر غلامی","صوفیا نجفی","شعبان اسدی"])},"مدیریت توسعه صنایع پتروشیمی":{employees:makeEmps("MT",["رستم موسوی","آرشام صادقی","گلریز طاهری","فخرالدین کریمی","بلال رحیمی"])},"ان‌پی‌سی اینترنشنال":{employees:makeEmps("NP",["سیمین‌دخت مرادی","عبدالله اکبری","مریم‌السادات علوی","جلال‌الدین رضایی","هانیه نجفی"])},"گروه مالی پیشگامان سرمایه خلیج فارس":{employees:makeEmps("GF",["داریا طاهری","ناصرالدین رستمی","شهلا کاظمی","سپهداد محمدی","پروین صادقی"])},"عملیات غیرصنعتی پازارگاد":{employees:makeEmps("PZ",["دریادل حسینی","فریماه جعفری","ملوان رحیمی","بنفشه اکبری","کاوه غلامی"])},"ره‌آوران فنون پتروشیمی":{employees:makeEmps("RF",["پلیمر آقایی","زمرد رضایی","سپند موسوی","آوا طاهری","سروش کریمی"])},"تجارت صنعت خلیج فارس":{employees:makeEmps("TJ",["احسان مرادی","سارینا رستمی","ماهان علوی","فرشته صادقی","بردیا نجفی"])},"کارگزاری خلیج فارس":{employees:makeEmps("KG",["حسن‌علی موسوی","مهتاب رستمی","صمد کریمی","لیندا جعفری","رحمت‌الله رحیمی"])},"ستاد هلدینگ خلیج فارس":{employees:makeEmps("HQ",["مدیر تدارکات ارشد","کارشناس ارشد خرید","مسئول قراردادها","رئیس ارزیابی تامین‌کنندگان","کارشناس ارزیابی"])}};
+let currentUser=null,compareList=[],currentTab="list",filterSearch="",filterCat="",filterProv="",sortBy="total",showBLOnly=false,currentPage=1;
+const PER_PAGE=20;
+function buildLogin(){const b=document.querySelector(".login-box");const opts=Object.keys(PETROCHEMICALS).map(c=>`<option value="${c}">${c}</option>`).join("");b.innerHTML=`<div class="login-logo"><div class="login-icon">⚙️</div><h1>سامانه مدیریت تامین و منابع</h1><p>هلدینگ خلیج فارس</p></div><div class="form-group"><label>انتخاب شرکت</label><select id="selCompany" class="filter-select" style="width:100%" onchange="onCompanySelect()"><option value="">-- شرکت را انتخاب کنید --</option><option value="__admin__">👑 مدیریت سیستم (ادمین)</option>${opts}</select></div><div id="step1Extra" style="display:none"></div><div id="loginError" class="login-error"></div><button class="login-btn" onclick="doLogin()">ورود به سامانه</button><div class="login-footer">تمامی حقوق محفوظ است — هلدینگ خلیج فارس ۱۴۰۴</div>`;}
+buildLogin();
+function onCompanySelect(){const v=document.getElementById("selCompany").value;const e=document.getElementById("step1Extra");if(!v){e.style.display="none";return;}e.style.display="block";if(v==="__admin__"){e.innerHTML=`<div class="form-group"><label>نام کاربری</label><input id="adminUser" class="search-input" style="width:100%"></div><div class="form-group"><label>رمز عبور</label><input type="password" id="adminPass" class="search-input" style="width:100%"></div>`;}else{const emps=PETROCHEMICALS[v].employees;e.innerHTML=`<div class="form-group"><label>انتخاب نام کارمند</label><select id="selEmployee" class="filter-select" style="width:100%"><option value="">-- نام خود را انتخاب کنید --</option>${emps.map(emp=>`<option value="${emp.personnel}">${emp.name} (${emp.personnel})</option>`).join("")}</select></div><div class="form-group"><label>رمز عبور (= شماره پرسنلی)</label><input type="password" id="empPass" class="search-input" style="width:100%"></div>`;}}
+function doLogin(){const company=document.getElementById("selCompany").value;const err=document.getElementById("loginError");err.style.display="none";if(!company){err.textContent="لطفاً شرکت را انتخاب کنید";err.style.display="block";return;}if(company==="__admin__"){const u=document.getElementById("adminUser")?.value.trim();const p=document.getElementById("adminPass")?.value.trim();if(u===ADMIN_USER&&p===ADMIN_PASS){currentUser={name:"مدیر سیستم",personnel:"0000",isAdmin:true,company:"ستاد هلدینگ خلیج فارس"};startApp();}else{err.textContent="نام کاربری یا رمز اشتباه است";err.style.display="block";}return;}const empPersonnel=document.getElementById("selEmployee")?.value;const empPass=document.getElementById("empPass")?.value.trim();if(!empPersonnel){err.textContent="لطفاً نام کارمند را انتخاب کنید";err.style.display="block";return;}if(!empPass){err.textContent="رمز عبور را وارد کنید";err.style.display="block";return;}const pc=PETROCHEMICALS[company];const emp=pc.employees.find(e=>e.personnel===empPersonnel);if(!emp||emp.pass!==empPass){err.textContent="رمز عبور اشتباه است";err.style.display="block";return;}currentUser={name:emp.name,personnel:emp.personnel,isAdmin:false,company};startApp();}
+function doLogout(){currentUser=null;document.getElementById("loginPage").style.display="flex";document.getElementById("app").style.display="none";}
+function startApp(){document.getElementById("loginPage").style.display="none";document.getElementById("app").style.display="block";const b=document.getElementById("userBadge");b.textContent=currentUser.isAdmin?"👑 مدیر سیستم":`${currentUser.name} | ${currentUser.company}`;if(currentUser.isAdmin)b.classList.add("admin-badge");renderStats();renderTabs();renderTab("list");}
+function generateCompanies(){const stored=localStorage.getItem("customSuppliers");const custom=stored?JSON.parse(stored):[];const pre=["صنعت","فن‌آور","پیشرو","توسعه","نوآور","صنایع","مهندسی","تکنو","پارس","ایران","آریا","کاسپین","زاگرس","خلیج","سپهر"];const mid=["پترو","نفت","گاز","فولاد","آهن","مس","آلومینیوم","شیمی","انرژی","صنعت","تکنیک","ماشین","قطعه","لوله","پمپ"];const suf=["کار","سازان","گستر","آراد","پارس","نو","برتر","کیان","نیک","پور","راد","افزار","تجارت","گروه","سیستم"];const companies=[];const used=new Set();for(let i=0;i<1000;i++){let name;do{name=`${pre[Math.floor(Math.random()*pre.length)]} ${mid[Math.floor(Math.random()*mid.length)]} ${suf[Math.floor(Math.random()*suf.length)]}`;}while(used.has(name));used.add(name);const promised=Math.floor(Math.random()*60)+10;const actual=Math.max(promised-5,promised+Math.floor(Math.random()*40)-5);const delay=Math.max(0,actual-promised);const q=+(Math.random()*4+1).toFixed(1);const c=+(Math.random()*4+1).toFixed(1);const pr=+(Math.random()*4+1).toFixed(1);const f=+(Math.random()*4+1).toFixed(1);const ds=delay===0?5:delay<=7?4:delay<=15?3:delay<=30?2:1;const total=+((q+c+pr+f+ds)/5).toFixed(2);companies.push({id:`IR-${String(1000+i).padStart(4,"0")}`,name,category:CATEGORIES[Math.floor(Math.random()*CATEGORIES.length)],province:PROVINCES[Math.floor(Math.random()*PROVINCES.length)],phone:`021-${Math.floor(10000000+Math.random()*89999999)}`,promisedDays:promised,actualDays:actual,delay,quality:q,communication:c,pricing:pr,followup:f,delayScore:ds,total,projects:Math.floor(Math.random()*30)+1,isCustom:false});}return[...companies,...custom];}
+const ALL=generateCompanies();
+function getRatings(id){const s=localStorage.getItem("ratings_"+id);return s?JSON.parse(s):{};}
+function saveRatings(id,r){localStorage.setItem("ratings_"+id,JSON.stringify(r));}
+function getHistory(id){const s=localStorage.getItem("history_"+id);return s?JSON.parse(s):[];}
+function addHistory(id,entry){let h=getHistory(id);h.unshift(entry);if(h.length>100)h=h.slice(0,100);localStorage.setItem("history_"+id,JSON.stringify(h));}
+function getEffective(s){const r=getRatings(s.id);const q=r.quality!==undefined?r.quality:s.quality;const c=r.communication!==undefined?r.communication:s.communication;const pr=r.pricing!==undefined?r.pricing:s.pricing;const f=r.followup!==undefined?r.followup:s.followup;const ds=r.delayScore!==undefined?r.delayScore:s.delayScore;const total=+((q+c+pr+f+ds)/5).toFixed(2);return{...s,quality:q,communication:c,pricing:pr,followup:f,delayScore:ds,total,ratings:r};}
+function getFiltered(){let list=ALL.map(getEffective);if(filterSearch)list=list.filter(s=>s.name.includes(filterSearch)||s.id.includes(filterSearch));if(filterCat)list=list.filter(s=>s.category===filterCat);if(filterProv)list=list.filter(s=>s.province===filterProv);if(showBLOnly)list=list.filter(s=>s.total<2.5);list.sort((a,b)=>sortBy==="delay"?a.delay-b.delay:b[sortBy]-a[sortBy]);return list;}
+function renderStats(){const list=ALL.map(getEffective);const avg=(list.reduce((s,c)=>s+c.total,0)/list.length).toFixed(1);const top=list.filter(s=>s.total>=4).length;const bl=list.filter(s=>s.total<2.5).length;document.getElementById("statsBar").innerHTML=`<div class="stat-card gold"><div class="stat-num">${list.length.toLocaleString("fa")}</div><div class="stat-label">کل تامین‌کنندگان</div></div><div class="stat-card"><div class="stat-num">${avg}</div><div class="stat-label">میانگین امتیاز</div></div><div class="stat-card green"><div class="stat-num">${top.toLocaleString("fa")}</div><div class="stat-label">تامین‌کننده برتر (۴+)</div></div><div class="stat-card red"><div class="stat-num">${bl.toLocaleString("fa")}</div><div class="stat-label">لیست سیاه</div></div>${currentUser.isAdmin?'<div class="stat-card gold"><div class="stat-num">۵۵.۱</div><div class="stat-label">ارزش کل تامین (همت)</div></div>':''}`;}
+function renderTabs(){const tabs=[["list","📋 تامین‌کنندگان"],["ai","🤖 مشاور هوش مصنوعی"],["report","📊 گزارش"]];if(currentUser.isAdmin)tabs.push(["dashboard","📈 داشبورد"]);document.getElementById("tabsBar").innerHTML=tabs.map(([id,label])=>`<button class="tab-btn${currentTab===id?" active":""}" onclick="renderTab('${id}')">${label}</button>`).join("");}
+function renderTab(tab){currentTab=tab;renderTabs();const c=document.getElementById("mainContent");if(tab==="list")renderList(c);else if(tab==="ai")renderAI(c);else if(tab==="report")renderReport(c);else if(tab==="dashboard")renderDashboard(c);}
+function star(v){const f=Math.floor(v);return'<span class="stars">'+"★".repeat(f)+"☆".repeat(5-f)+'</span>';}
+function scoreBadge(v){const cl=v>=4?"high":v>=3?"mid":"low";return`<span class="score-badge ${cl}">${v}</span>`;}
+function delayCell(d){if(d===0)return'<span class="delay-ok">به‌موقع ✓</span>';if(d<=7)return`<span class="delay-warn">${d} روز</span>`;return`<span class="delay-bad">${d} روز</span>`;}
+function renderList(c){const filtered=getFiltered();const total=filtered.length;const pages=Math.ceil(total/PER_PAGE);currentPage=Math.min(currentPage,pages||1);const page=filtered.slice((currentPage-1)*PER_PAGE,currentPage*PER_PAGE);c.innerHTML=`<div class="filters"><input class="search-input" placeholder="🔍 جستجو نام یا کد..." value="${filterSearch}" oninput="filterSearch=this.value;currentPage=1;renderTab('list')"><select class="filter-select" onchange="filterCat=this.value;currentPage=1;renderTab('list')"><option value="">همه دسته‌ها</option>${CATEGORIES.map(cat=>`<option value="${cat}"${filterCat===cat?" selected":""}>${cat}</option>`).join("")}</select><select class="filter-select" onchange="filterProv=this.value;currentPage=1;renderTab('list')"><option value="">همه استان‌ها</option>${PROVINCES.map(p=>`<option value="${p}"${filterProv===p?" selected":""}>${p}</option>`).join("")}</select><select class="filter-select" onchange="sortBy=this.value;renderTab('list')"><option value="total">امتیاز کل</option><option value="quality">کیفیت</option><option value="communication">ارتباط</option><option value="delay">کمترین تاخیر</option></select><button class="blacklist-toggle${showBLOnly?" active":""}" onclick="showBLOnly=!showBLOnly;currentPage=1;renderTab('list')">🚫 لیست سیاه</button><button class="add-btn" onclick="showAddForm()">+ افزودن</button><button class="add-btn" style="background:var(--gray-600)" onclick="exportCSV()">📥 CSV</button></div><div class="result-count">${total.toLocaleString("fa")} شرکت — صفحه ${currentPage.toLocaleString("fa")} از ${pages.toLocaleString("fa")}</div><div class="table-wrap"><table><thead><tr><th>#</th><th>کد</th><th>نام شرکت</th><th>دسته</th><th>استان</th><th>کیفیت</th><th>تاخیر</th><th>امتیاز</th><th>مقایسه</th></tr></thead><tbody>${page.map((s,i)=>`<tr class="${s.total<2.5?"blacklisted":""}" onclick="openDetail('${s.id}')"><td>${((currentPage-1)*PER_PAGE+i+1).toLocaleString("fa")}</td><td style="font-size:11px;color:var(--gray-400)">${s.id}</td><td><div class="company-name">${s.name}</div>${s.total<2.5?'<div class="bl-badge">🚫 لیست سیاه</div>':""}</td><td>${s.category}</td><td>${s.province}</td><td>${star(s.quality)}</td><td>${delayCell(s.delay)}</td><td>${scoreBadge(s.total)}</td><td><input type="checkbox" onclick="event.stopPropagation();toggleCompare('${s.id}','${s.name}')" ${compareList.find(x=>x.id===s.id)?"checked":""}></td></tr>`).join("")}</tbody></table></div><div class="pagination"><button class="page-btn" ${currentPage===1?"disabled":""} onclick="currentPage--;renderTab('list')">قبلی</button>${Array.from({length:Math.min(5,pages)},(_,i)=>{const pg=Math.max(1,currentPage-2)+i;return pg>pages?"":` + "`" + `<button class="page-btn${pg===currentPage?" active":""}" onclick="currentPage=${pg};renderTab('list')">${pg.toLocaleString("fa")}</button>` + "`" + `;}).join("")}<button class="page-btn" ${currentPage>=pages?"disabled":""} onclick="currentPage++;renderTab('list')">بعدی</button></div>`;}
+function toggleCompare(id,name){const idx=compareList.findIndex(x=>x.id===id);if(idx>=0)compareList.splice(idx,1);else if(compareList.length<3)compareList.push({id,name});updateCompareBar();renderTab("list");}
+function updateCompareBar(){const bar=document.getElementById("compareBar");bar.style.display=compareList.length>0?"flex":"none";document.getElementById("compareChips").innerHTML=compareList.map(x=>`<div class="compare-chip"><button onclick="compareList=compareList.filter(c=>c.id!=='${x.id}');updateCompareBar();renderTab('list')" style="background:none;border:none;cursor:pointer">✕</button>${x.name}</div>`).join("");document.getElementById("compareBtn").disabled=compareList.length<2;}
+function clearCompare(){compareList=[];updateCompareBar();renderTab("list");}
+async function doCompare(){const suppliers=compareList.map(x=>getEffective(ALL.find(s=>s.id===x.id)));const data=suppliers.map(s=>`${s.name}|کیفیت:${s.quality}|ارتباط:${s.communication}|قیمت:${s.pricing}|پیگیری:${s.followup}|تحویل:${s.delayScore}|کل:${s.total}|تاخیر:${s.delay}روز`).join("\n");showModal("مقایسه هوشمند",`<div class="ai-loading"><div class="spinner"></div> در حال تحلیل...</div>`);const res=await callAI(`مقایسه این تامین‌کنندگان را به فارسی بده و بهترین را معرفی کن:\n${data}`);document.getElementById("modalBody").innerHTML=`<div class="ai-response">${res}</div>`;}
+const EVAL_CRITERIA=[{key:"delivery",label:"تحویل",opts:[{l:"به‌موقع",v:5},{l:"۱-۷ روز تاخیر",v:4},{l:"۸-۳۰ روز تاخیر",v:3},{l:"بیش از ۳۰ روز",v:1}],scoreKey:"delayScore"},{key:"quality",label:"کیفیت",opts:[{l:"عالی",v:5},{l:"خوب",v:4},{l:"متوسط",v:3},{l:"ضعیف",v:1}],scoreKey:"quality"},{key:"communication",label:"ارتباط",opts:[{l:"خیلی سریع",v:5},{l:"سریع",v:4},{l:"کند",v:2},{l:"بدون پاسخ",v:1}],scoreKey:"communication"},{key:"pricing",label:"قیمت",opts:[{l:"خیلی مناسب",v:5},{l:"مناسب",v:4},{l:"گران",v:2},{l:"خیلی گران",v:1}],scoreKey:"pricing"},{key:"aftersales",label:"پس از فروش",opts:[{l:"عالی",v:5},{l:"خوب",v:4},{l:"ضعیف",v:2},{l:"ندارد",v:1}],scoreKey:"followup"}];
+function openDetail(id){const s=getEffective(ALL.find(x=>x.id===id));renderDetail(s);}
+function renderDetail(s){const isBL=s.total<2.5;const r=s.ratings||{};const history=getHistory(s.id);let evalHtml=EVAL_CRITERIA.map(cr=>`<div style="margin-bottom:12px"><div style="font-size:12px;font-weight:700;color:var(--gray-600);margin-bottom:6px">${cr.label}</div><div class="eval-chips">${cr.opts.map(opt=>`<button class="eval-chip${r[cr.key]===opt.v?" selected":""}" onclick="setRating('${s.id}','${cr.key}',${opt.v},'${cr.scoreKey}')">${opt.l}</button>`).join("")}</div></div>`).join("");let histHtml=history.length===0?'<div style="font-size:12px;color:var(--gray-400);text-align:center;padding:12px">هنوز ارزیابی ثبت نشده</div>':history.slice(0,20).map(h=>`<div class="history-item${h.type==="reset"?" reset":""}"><div style="font-size:12px;font-weight:600;color:var(--gray-700)">${h.text}</div><div class="history-meta">${h.user} (${h.personnel}) | ${h.company||""} — ${h.date}</div></div>`).join("");const body=`${isBL?`<div class="bl-warning"><span>🚫 این تامین‌کننده در لیست سیاه است</span><button class="remove-bl-btn" onclick="removeFromBL('${s.id}')">حذف از لیست سیاه</button></div>`:""}<div class="detail-row"><span class="detail-label">کد</span><span class="detail-value">${s.id}</span></div><div class="detail-row"><span class="detail-label">دسته‌بندی</span><span class="detail-value">${s.category}</span></div><div class="detail-row"><span class="detail-label">استان</span><span class="detail-value">${s.province}</span></div><div class="detail-row"><span class="detail-label">تعداد پروژه</span><span class="detail-value">${s.projects} پروژه</span></div><div class="detail-row"><span class="detail-label">تاخیر تحویل</span><span class="detail-value">${delayCell(s.delay)}</span></div><div class="total-score-box"><div class="total-score-num">${s.total}</div><div class="total-score-label">امتیاز کل از ۵</div></div><div class="section-title">ارزیابی تفصیلی</div>${evalHtml}<div class="section-title">تحلیل هوش مصنوعی</div><div class="ai-section" id="aiDetail_${s.id}"><div class="ai-loading"><div class="spinner"></div> در حال تحلیل...</div></div><div class="section-title">تاریخچه ارزیابی (${history.length} رکورد)</div><div style="max-height:200px;overflow-y:auto">${histHtml}</div>`;showModal(s.name,body);fetchDetailAI(s);}
+async function fetchDetailAI(s){const el=document.getElementById(`aiDetail_${s.id}`);if(!el)return;const text=await callAI(`تحلیل دقیق این تامین‌کننده را به فارسی بده. نقاط قوت و ضعف را با اعداد ذکر کن:\nنام:${s.name}\nدسته:${s.category}\nکیفیت:${s.quality}/5\nارتباط:${s.communication}/5\nقیمت:${s.pricing}/5\nپیگیری:${s.followup}/5\nتحویل:${s.delayScore}/5\nتاخیر:${s.delay}روز\nپروژه‌ها:${s.projects}\nامتیاز کل:${s.total}/5`);if(el)el.innerHTML=`<div class="ai-result">${text}</div>`;}
+function setRating(id,criterion,value,scoreKey){const r=getRatings(id);r[criterion]=value;r[scoreKey]=value;saveRatings(id,r);const s=getEffective(ALL.find(x=>x.id===id));addHistory(id,{text:`${criterion} → ${value}/5`,user:currentUser.name,personnel:currentUser.personnel,company:currentUser.company,date:new Date().toLocaleString("fa-IR"),type:"rating"});renderStats();renderDetail(s);}
+function removeFromBL(id){if(!confirm("تمام امتیازهای این تامین‌کننده پاک خواهد شد. ادامه می‌دهید؟"))return;localStorage.removeItem("ratings_"+id);addHistory(id,{text:"حذف از لیست سیاه — امتیازها ریست شد",user:currentUser.name,personnel:currentUser.personnel,company:currentUser.company,date:new Date().toLocaleString("fa-IR"),type:"reset"});renderStats();closeModal();renderTab("list");}
+function showAddForm(){showModal("افزودن تامین‌کننده جدید",`<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="grid-column:1/-1"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">نام شرکت</label><input id="af_name" class="search-input" style="width:100%"></div><div><label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">دسته‌بندی</label><select id="af_cat" class="filter-select" style="width:100%">${CATEGORIES.map(c=>`<option>${c}</option>`).join("")}</select></div><div><label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">استان</label><select id="af_prov" class="filter-select" style="width:100%">${PROVINCES.map(p=>`<option>${p}</option>`).join("")}</select></div><div><label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">تلفن</label><input id="af_phone" class="search-input" style="width:100%"></div><div><label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">ایمیل</label><input id="af_email" class="search-input" style="width:100%"></div></div><div style="margin-top:12px"><button class="cancel-btn" onclick="closeModal()">انصراف</button><button class="save-btn" onclick="saveNewSupplier()">ذخیره</button></div>`);}
+function saveNewSupplier(){const name=document.getElementById("af_name").value.trim();if(!name){alert("نام شرکت الزامی است");return;}const stored=localStorage.getItem("customSuppliers");const list=stored?JSON.parse(stored):[];const id=`IR-C${String(Date.now()).slice(-6)}`;list.push({id,name,category:document.getElementById("af_cat").value,province:document.getElementById("af_prov").value,phone:document.getElementById("af_phone").value,email:document.getElementById("af_email").value,quality:3,communication:3,pricing:3,followup:3,delayScore:3,total:3,projects:0,delay:0,promisedDays:0,actualDays:0,isCustom:true});localStorage.setItem("customSuppliers",JSON.stringify(list));closeModal();alert(`تامین‌کننده "${name}" با کد ${id} ثبت شد`);location.reload();}
+function exportCSV(){const filtered=getFiltered();const rows=[["کد","نام شرکت","دسته‌بندی","استان","کیفیت","ارتباط","قیمت","پیگیری","تحویل","امتیاز کل","وضعیت"]];filtered.forEach(s=>{rows.push([s.id,s.name,s.category,s.province,s.quality,s.communication,s.pricing,s.followup,s.delayScore,s.total,s.total<2.5?"لیست سیاه":"فعال"]);});const csv="\uFEFF"+rows.map(r=>r.map(v=>`"${v}"`).join(",")).join("\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));a.download=`suppliers-${new Date().toISOString().slice(0,10)}.csv`;a.click();}
+async function callAI(prompt){try{const res=await fetch("https://api.avalai.ir/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+API_KEY},body:JSON.stringify({model:"gpt-4o-mini",max_tokens:1000,messages:[{role:"user",content:prompt}]})});const data=await res.json();return data.choices?.[0]?.message?.content||"پاسخی دریافت نشد.";}catch(e){return"خطا در اتصال به هوش مصنوعی.";}}
+function renderAI(c){c.innerHTML=`<div class="ai-tab-box"><h3>🤖 مشاور هوشمند تامین‌کنندگان</h3><p>هر سوالی درباره تامین‌کنندگان بپرسید.</p><div class="ai-examples"><button class="ai-example" onclick="document.getElementById('aiInput').value='۱۰ شرکت برتر در حوزه ولو'">۱۰ شرکت برتر ولو</button><button class="ai-example" onclick="document.getElementById('aiInput').value='شرکت‌های با کمترین تاخیر'">کمترین تاخیر</button><button class="ai-example" onclick="document.getElementById('aiInput').value='کدام شرکت‌ها در لیست سیاه هستند؟'">لیست سیاه</button></div><textarea id="aiInput" class="ai-textarea" placeholder="سوال خود را بنویسید..."></textarea><br><button class="ai-send-btn" onclick="sendAIQuery()">ارسال ➤</button><div id="aiOutput" style="display:none" class="ai-response"></div></div>`;}
+async function sendAIQuery(){const q=document.getElementById("aiInput").value.trim();if(!q)return;const out=document.getElementById("aiOutput");out.style.display="block";out.innerHTML='<div class="ai-loading"><div class="spinner"></div> در حال پردازش...</div>';const top100=ALL.map(getEffective).sort((a,b)=>b.total-a.total).slice(0,100).map(s=>`${s.name}(${s.id})|${s.category}|${s.province}|کل:${s.total}|کیفیت:${s.quality}|تاخیر:${s.delay}روز`).join("\n");const bl=ALL.map(getEffective).filter(s=>s.total<2.5).map(s=>s.name).join("، ");const res=await callAI(`تو مشاور سامانه مدیریت تامین‌کنندگان هلدینگ خلیج فارس هستی.\n۱۰۰ تامین‌کننده برتر:\n${top100}\nلیست سیاه:${bl}\nسوال:${q}\nپاسخ دقیق و حرفه‌ای به فارسی بده.`);out.innerHTML=res;}
+function renderReport(c){const list=ALL.map(getEffective);c.innerHTML=`<div class="report-grid">${CATEGORIES.map(cat=>{const items=list.filter(s=>s.category===cat);const avg=items.length?(items.reduce((s,x)=>s+x.total,0)/items.length).toFixed(1):"—";const best=items.sort((a,b)=>b.total-a.total)[0];const bl=items.filter(s=>s.total<2.5).length;return`<div class="report-card"><h4>${cat}</h4><div class="report-stat"><span style="font-size:12px;color:var(--gray-500)">تعداد</span><span style="font-weight:700">${items.length}</span></div><div class="report-stat"><span style="font-size:12px;color:var(--gray-500)">میانگین</span><span style="font-weight:700;color:var(--gold-dark)">${avg}</span></div><div class="report-stat"><span style="font-size:12px;color:var(--gray-500)">لیست سیاه</span><span style="font-weight:700;color:var(--red)">${bl}</span></div><div class="report-stat"><span style="font-size:12px;color:var(--gray-500)">برترین</span><span style="font-weight:700;color:var(--green);font-size:12px">${best?.name||"—"}</span></div></div>`;}).join("")}</div>`;}
+function renderDashboard(c){const list=ALL.map(getEffective);const top10=[...list].sort((a,b)=>b.total-a.total).slice(0,10);const worst10=[...list].sort((a,b)=>a.total-b.total).slice(0,10);c.innerHTML=`<div class="dashboard-grid"><div class="dash-card"><h3>🏆 ۱۰ تامین‌کننده برتر</h3>${top10.map((s,i)=>`<div class="top-item"><div><span style="color:var(--gold-dark);font-weight:800;margin-left:6px">${i+1}.</span><span class="top-item-name">${s.name}</span><br><span style="font-size:11px;color:var(--gray-400)">${s.category}</span></div><span style="font-size:13px;font-weight:800;color:var(--green)">${s.total}</span></div>`).join("")}</div><div class="dash-card"><h3>⚠️ نیاز به بررسی</h3>${worst10.map((s,i)=>`<div class="top-item"><div><span style="color:var(--red);font-weight:800;margin-left:6px">${i+1}.</span><span class="top-item-name">${s.name}</span><br><span style="font-size:11px;color:var(--gray-400)">${s.category}</span></div><span style="font-size:13px;font-weight:800;color:var(--red)">${s.total}</span></div>`).join("")}</div><div class="dash-card"><h3>📊 میانگین به تفکیک دسته</h3>${CATEGORIES.map(cat=>{const items=list.filter(s=>s.category===cat);const avg=items.length?(items.reduce((s,x)=>s+x.total,0)/items.length).toFixed(1):0;const w=Math.min(100,avg/5*100);return`<div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px"><span>${cat}</span><span style="font-weight:700">${avg}</span></div><div style="background:var(--gray-100);border-radius:4px;height:6px"><div style="background:var(--gold);width:${w}%;height:100%;border-radius:4px"></div></div></div>`;}).join("")}</div></div>`;}
+function showModal(title,body){document.getElementById("modalTitle").textContent=title;document.getElementById("modalBody").innerHTML=body;document.getElementById("modal").style.display="flex";}
+function closeModal(e){if(!e||e.target.id==="modal")document.getElementById("modal").style.display="none";}
 </script>
-
 </body>
 </html>
